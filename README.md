@@ -36,17 +36,17 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td width="280" align="center" valign="middle" style="border: none; background: transparent;">
-      <img src="https://raw.githubusercontent.com/Rudra-Narayan-Pandey/Rudra-Narayan-Pandey/main/cyber_face.png?v=8" width="260" alt="Cyber Operative Biometric Scan" style="border-radius: 12px; border: 2px solid #00f2fe; box-shadow: 0 0 20px rgba(0,242,254,0.4);" />
+      <img src="./alien_ufo_core.svg?v=1" width="260" alt="Alien UFO Core" style="border-radius: 12px; border: 2px solid #a855f7; box-shadow: 0 0 20px rgba(168,85,247,0.4);" />
     </td>
     <td valign="top" style="border: none; background: transparent; padding-left: 20px;">
-      <img src="./terminal_card.svg?v=1" alt="Terminal Card" width="100%" />
+      <img src="./terminal_card.svg?v=2" alt="Terminal Card" width="100%" />
     </td>
   </tr>
 </table>
 
 ---
 
-### 📂 <kbd>root/classified_data/</kbd>
+### ⎔ <kbd>root/classified_data/</kbd>
 
 <details open>
   <summary><b><kbd>./view_mission_directive.sh</kbd></b></summary>

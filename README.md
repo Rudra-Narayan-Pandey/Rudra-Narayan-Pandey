@@ -39,19 +39,7 @@
       <img src="https://raw.githubusercontent.com/Rudra-Narayan-Pandey/Rudra-Narayan-Pandey/main/cyber_face.png?v=8" width="260" alt="Cyber Operative Biometric Scan" style="border-radius: 12px; border: 2px solid #00f2fe; box-shadow: 0 0 20px rgba(0,242,254,0.4);" />
     </td>
     <td valign="top" style="border: none; background: transparent; padding-left: 20px;">
-      <pre lang="ini">
-[+] CODE-NAME     : OPERATIVE_RNP
-[+] IDENTITY      : RUDRA NARAYAN PANDEY
-[+] CLEARANCE     : ROOT_ACCESS_LEVEL_4
-[+] CORE FOCUS    : CYBER_SECURITY | VAPT | DEVSECOPS
-[+] ACADEMIC NODE : VIT VELLORE // B.TECH CSE
-[+] STATUS        : ACTIVE & ENCRYPTED
-      </pre>
-      <pre lang="diff">
-+ [STATUS] BIOMETRIC FACE RECOGNITION LOCK CONFIRMED
-+ [CLEARANCE] SECURITY ACCESS DECK FULLY INITIALIZED
-- [ALARM] NO INTRUDER BYPASS DETECTED ON NETSHIELD
-      </pre>
+      <img src="./terminal_card.svg?v=1" alt="Terminal Card" width="100%" />
     </td>
   </tr>
 </table>
@@ -69,48 +57,12 @@
   </blockquote>
 </details>
 
-<details>
+<details open>
   <summary><b><kbd>./list_active_nodes.sh --filter=projects</kbd></b></summary>
   <br>
-  <table width="100%">
-    <tr>
-      <td width="50%" valign="top">
-        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/saie-ecosystem" style="color: #39ff14;">node://saie-ecosystem</a></h4>
-        <p><i>Self-Healing AI Ecosystem Simulator</i></p>
-        <code>Status: SECURE | Health: 100%</code><br>
-        <small>Evaluates AI resilience against deepfake injections, malicious misinformation cascades, and adversarial payloads.</small>
-      </td>
-      <td width="50%" valign="top">
-        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/ARAA" style="color: #39ff14;">node://ARAA</a></h4>
-        <p><i>Adversarial Reality Alignment Arena</i></p>
-        <code>Status: AUDITING | Health: 98%</code><br>
-        <small>Benchmark suite built for testing, auditing, and hardening LLM agents under deceptive environments.</small>
-      </td>
-    </tr>
-    <tr>
-      <td width="50%" valign="top">
-        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/Gods-eye-x" style="color: #39ff14;">node://Gods-eye-x</a></h4>
-        <p><i>Reality Alignment & Intelligence Dashboard</i></p>
-        <code>Status: STREAMING | Health: 100%</code><br>
-        <small>Visualization platform tracking agentic operations, divergence metrics, and ecosystem health.</small>
-      </td>
-      <td width="50%" valign="top">
-        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/sudarshana" style="color: #39ff14;">node://sudarshana</a></h4>
-        <p><i>Intrusion Detection System</i></p>
-        <code>Status: ACTIVE_LOG | Health: 99%</code><br>
-        <small>Lightweight network packet analyzer executing rule-based heuristics to generate real-time alerts.</small>
-      </td>
-    </tr>
-    <tr>
-      <td width="50%" valign="top">
-        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/DORA-Dashboard" style="color: #39ff14;">node://DORA-Dashboard</a></h4>
-        <p><i>DevOps Metrics Engine</i></p>
-        <code>Status: CALCULATING | Health: 100%</code><br>
-        <small>Calculates and visualizes deployment frequencies, lead time for changes, and failure rates.</small>
-      </td>
-      <td width="50%"></td>
-    </tr>
-  </table>
+  <a href="https://github.com/Rudra-Narayan-Pandey?tab=repositories">
+    <img src="./projects_hud.svg?v=1" alt="Projects HUD Dashboard" width="100%" />
+  </a>
 </details>
 
 <details>
@@ -190,18 +142,7 @@
 <details open>
   <summary><b><kbd>git log --oneline --color</kbd></b></summary>
   <br>
-  <pre lang="diff">
-+ 70401b6 (HEAD -> main) ☈ [ROOT.ACCESS] SYSTEM COMPROMISED. GOD MODE ACTIVATED.
-+ 7e1a7da ☈ [SYNC] CALIBRATING BIOMETRIC CYBER-FACE SCANNERS
-+ b21c953 ☈ [SYS.DEFENSE] ARMING ORBITAL COUNTER-MEASURE PROTOCOLS
-+ bc80180 ☈ [UI.RENDER] INITIALIZING HOLOGRAPHIC SCALAR FIELD GENERATOR
-+ d103085 ☈ [AUTH.FORGE] SPOOFING ROOT CREDENTIALS - ACCESS GRANTED
-+ 2da98c3 ☈ [INJECT] UPLOADING GOD_MODE_PAYLOAD.BIN TO MAINFRAME
-+ 96e3194 ☈ [OVERRIDE] BYPASSING MAINFRAME FIREWALLS via QUANTUM TUNNEL
-+ b785e1d ☈ [NETWORK.UPLINK] ESTABLISHING EXTRATERRESTRIAL RELAY CONNECTION
-+ c473cf5 ☈ [MODULE.LOAD] DECRYPTING NEURO-LINK SECTOR 7G
-+ 31fc8ed ☈ [SYS.INIT] BOOT SEQUENCE INITIATED... ALIEN PROTOCOL ENGAGED
-  </pre>
+  <img src="./commit_log.svg?v=1" alt="Scrolling Commit Log" width="100%" />
 </details>
 
 ---

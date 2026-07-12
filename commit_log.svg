@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="250">
+  <defs>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <linearGradient id="fade-mask" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="transparent" />
+      <stop offset="15%" stop-color="white" />
+      <stop offset="85%" stop-color="white" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+    <mask id="fade">
+      <rect width="100%" height="100%" fill="url(#fade-mask)" />
+    </mask>
+  </defs>
+
+  <style>
+    @keyframes scroll {
+      0% { transform: translateY(250px); }
+      100% { transform: translateY(-300px); }
+    }
+    .scroller { animation: scroll 15s linear infinite; }
+    .commit-text { font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 600; }
+    .hash { fill: #eab308; }
+    .branch { fill: #39ff14; }
+    .msg { fill: #e2e8f0; }
+  </style>
+
+  <rect width="100%" height="100%" fill="rgba(2, 6, 23, 0.8)" rx="10" stroke="#1e3a8a" stroke-width="2"/>
+  
+  <text x="20" y="30" font-family="'Fira Code', monospace" font-size="14" fill="#00f2fe" font-weight="900" letter-spacing="1" filter="url(#glow-cyan)">root@operative:~$ git log --oneline --color</text>
+  <line x1="20" y1="40" x2="780" y2="40" stroke="#1e3a8a" stroke-width="2"/>
+
+  <!-- Scrolling Area -->
+  <g mask="url(#fade)">
+    <g class="scroller" transform="translate(20, 0)">
+      <text y="50" class="commit-text"><tspan class="hash">70401b6</tspan> <tspan class="branch">(HEAD -> main)</tspan> <tspan class="msg">☈ [ROOT.ACCESS] SYSTEM COMPROMISED. GOD MODE ACTIVATED.</tspan></text>
+      <text y="75" class="commit-text"><tspan class="hash">7e1a7da</tspan> <tspan class="msg">☈ [SYNC] CALIBRATING BIOMETRIC CYBER-FACE SCANNERS</tspan></text>
+      <text y="100" class="commit-text"><tspan class="hash">b21c953</tspan> <tspan class="msg">☈ [SYS.DEFENSE] ARMING ORBITAL COUNTER-MEASURE PROTOCOLS</tspan></text>
+      <text y="125" class="commit-text"><tspan class="hash">bc80180</tspan> <tspan class="msg">☈ [UI.RENDER] INITIALIZING HOLOGRAPHIC SCALAR FIELD GENERATOR</tspan></text>
+      <text y="150" class="commit-text"><tspan class="hash">d103085</tspan> <tspan class="msg">☈ [AUTH.FORGE] SPOOFING ROOT CREDENTIALS - ACCESS GRANTED</tspan></text>
+      <text y="175" class="commit-text"><tspan class="hash">2da98c3</tspan> <tspan class="msg">☈ [INJECT] UPLOADING GOD_MODE_PAYLOAD.BIN TO MAINFRAME</tspan></text>
+      <text y="200" class="commit-text"><tspan class="hash">96e3194</tspan> <tspan class="msg">☈ [OVERRIDE] BYPASSING MAINFRAME FIREWALLS via QUANTUM TUNNEL</tspan></text>
+      <text y="225" class="commit-text"><tspan class="hash">b785e1d</tspan> <tspan class="msg">☈ [NETWORK.UPLINK] ESTABLISHING EXTRATERRESTRIAL RELAY CONNECTION</tspan></text>
+      <text y="250" class="commit-text"><tspan class="hash">c473cf5</tspan> <tspan class="msg">☈ [MODULE.LOAD] DECRYPTING NEURO-LINK SECTOR 7G</tspan></text>
+      <text y="275" class="commit-text"><tspan class="hash">31fc8ed</tspan> <tspan class="msg">☈ [SYS.INIT] BOOT SEQUENCE INITIATED... ALIEN PROTOCOL ENGAGED</tspan></text>
+    </g>
+  </g>
+</svg>

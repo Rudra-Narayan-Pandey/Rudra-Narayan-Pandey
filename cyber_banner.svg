@@ -1,157 +1,128 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" width="100%" height="340">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="100%" height="240">
+  <defs>
+    <!-- Glowing filter effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#9b5de5" />
+    </linearGradient>
+  </defs>
+
   <style>
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink {
-      50% { stroke: transparent; }
-    }
-    @keyframes float1 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(15px, -15px) rotate(1deg); }
-    }
-    @keyframes float2 {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      50% { transform: translate(-20px, 10px) rotate(-1deg); }
-    }
-    @keyframes float3 {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(10px, 20px); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
     }
     @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
+      0%, 100% { opacity: 0.4; }
       50% { opacity: 0.9; }
     }
-    .floating-g1 {
-      animation: float1 12s infinite ease-in-out;
-      transform-origin: 180px 150px;
+    @keyframes typing-1 {
+      0%, 9% { width: 0; opacity: 0; }
+      10%, 28% { width: 420px; opacity: 1; }
+      29%, 100% { width: 0; opacity: 0; }
     }
-    .floating-g2 {
-      animation: float2 15s infinite ease-in-out;
-      transform-origin: 800px 130px;
+    @keyframes typing-2 {
+      0%, 34% { width: 0; opacity: 0; }
+      35%, 58% { width: 550px; opacity: 1; }
+      59%, 100% { width: 0; opacity: 0; }
     }
-    .floating-g3 {
-      animation: float3 18s infinite ease-in-out;
+    @keyframes typing-3 {
+      0%, 64% { width: 0; opacity: 0; }
+      65%, 88% { width: 520px; opacity: 1; }
+      89%, 100% { width: 0; opacity: 0; }
+    }
+    @keyframes cursor-blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .floating-logo {
+      animation: float 6s infinite ease-in-out;
+      transform-origin: 110px 120px;
+    }
+    .circuit-line {
+      stroke: #1c212a;
+      stroke-width: 1.5;
+      fill: none;
     }
     .typing-text {
       font-family: 'Fira Code', 'Courier New', monospace;
       font-weight: 700;
       white-space: nowrap;
     }
-    .line1 {
-      animation: type-line1 12s infinite;
+    .t-line1 {
+      animation: typing-1 12s infinite;
     }
-    .line2 {
-      animation: type-line2 12s infinite;
+    .t-line2 {
+      animation: typing-2 12s infinite;
     }
-    .line3 {
-      animation: type-line3 12s infinite;
+    .t-line3 {
+      animation: typing-3 12s infinite;
     }
     .cursor {
       animation: cursor-blink 0.8s infinite;
       stroke: #00f2fe;
       stroke-width: 3;
     }
-    
-    @keyframes type-line1 {
-      0% { width: 0; opacity: 0; }
-      2% { width: 0; opacity: 1; }
-      15%, 28% { width: 400px; opacity: 1; }
-      30%, 100% { width: 0; opacity: 0; }
-    }
-    @keyframes type-line2 {
-      0%, 33% { width: 0; opacity: 0; }
-      35% { width: 0; opacity: 1; }
-      48%, 61% { width: 440px; opacity: 1; }
-      63%, 100% { width: 0; opacity: 0; }
-    }
-    @keyframes type-line3 {
-      0%, 66% { width: 0; opacity: 0; }
-      68% { width: 0; opacity: 1; }
-      81%, 94% { width: 440px; opacity: 1; }
-      96%, 100% { width: 0; opacity: 0; }
-    }
-    @keyframes cursor-blink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
   </style>
-  
-  <!-- Deep Space Dark Background -->
-  <rect width="100%" height="100%" fill="#0d1117" rx="10"/>
-  
-  <!-- Grid overlay -->
-  <path d="M0 40 H1000 M0 80 H1000 M0 120 H1000 M0 160 H1000 M0 200 H1000 M0 240 H1000 M0 280 H1000 M0 320 H1000" stroke="#1c212a" stroke-width="1" />
-  <path d="M100 0 V340 M200 0 V340 M300 0 V340 M400 0 V340 M500 0 V340 M600 0 V340 M700 0 V340 M800 0 V340 M900 0 V340" stroke="#1c212a" stroke-width="1" />
-  
-  <!-- Parallax Constellation Layer 1 (floating-g1) -->
-  <g class="floating-g1">
-    <line x1="80" y1="60" x2="220" y2="100" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1"/>
-    <line x1="220" y1="100" x2="150" y2="240" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1"/>
-    <line x1="150" y1="240" x2="80" y2="60" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1"/>
-    <line x1="220" y1="100" x2="320" y2="60" stroke="rgba(0, 242, 254, 0.1)" stroke-width="1"/>
-    
-    <circle cx="80" cy="60" r="4" fill="#00f2fe" style="animation: pulse 3s infinite;"/>
-    <circle cx="220" cy="100" r="6" fill="#9b5de5" style="animation: pulse 4s infinite;"/>
-    <circle cx="150" cy="240" r="5" fill="#00f2fe" style="animation: pulse 5s infinite;"/>
-    <circle cx="320" cy="60" r="3" fill="#ffffff" style="animation: pulse 2.5s infinite;"/>
-  </g>
-  
-  <!-- Parallax Constellation Layer 2 (floating-g2) -->
-  <g class="floating-g2">
-    <line x1="880" y1="70" x2="740" y2="150" stroke="rgba(155, 93, 229, 0.2)" stroke-width="1"/>
-    <line x1="740" y1="150" x2="920" y2="220" stroke="rgba(155, 93, 229, 0.2)" stroke-width="1"/>
-    <line x1="920" y1="220" x2="880" y2="70" stroke="rgba(155, 93, 229, 0.2)" stroke-width="1"/>
-    <line x1="740" y1="150" x2="630" y2="200" stroke="rgba(0, 242, 254, 0.1)" stroke-width="1"/>
-    
-    <circle cx="880" cy="70" r="6" fill="#9b5de5" style="animation: pulse 4s infinite;"/>
-    <circle cx="740" cy="150" r="4" fill="#00f2fe" style="animation: pulse 3s infinite;"/>
-    <circle cx="920" cy="220" r="7" fill="#9b5de5" style="animation: pulse 6s infinite;"/>
-    <circle cx="630" cy="200" r="3.5" fill="#ffffff" style="animation: pulse 3.5s infinite;"/>
+
+  <!-- Deep Cyber Dark Background -->
+  <rect width="100%" height="100%" fill="#0d1117" rx="12"/>
+
+  <!-- Futuristic Cyber Grid Overlay -->
+  <path d="M 0 30 H 1000 M 0 60 H 1000 M 0 90 H 1000 M 0 120 H 1000 M 0 150 H 1000 M 0 180 H 1000 M 0 210 H 1000" stroke="#161b22" stroke-width="1" />
+  <path d="M 50 0 V 240 M 100 0 V 240 M 150 0 V 240 M 200 0 V 240 M 250 0 V 240 M 300 0 V 240 M 350 0 V 240 M 400 0 V 240 M 450 0 V 240 M 500 0 V 240 M 550 0 V 240 M 600 0 V 240 M 650 0 V 240 M 700 0 V 240 M 750 0 V 240 M 800 0 V 240 M 850 0 V 240 M 900 0 V 240 M 950 0 V 240" stroke="#161b22" stroke-width="1" />
+
+  <!-- Background Cyber Circuit Lines -->
+  <path class="circuit-line" d="M 200 120 H 280 L 310 150 H 600" />
+  <path class="circuit-line" d="M 110 50 V 80 L 140 110 H 260" />
+  <path class="circuit-line" d="M 800 40 L 850 90 H 950" stroke-width="1" />
+  <path class="circuit-line" d="M 750 200 L 780 170 H 900" stroke-width="1" />
+
+  <!-- Glowing nodes -->
+  <circle cx="280" cy="120" r="3" fill="#00f2fe" style="animation: pulse 2s infinite;"/>
+  <circle cx="310" cy="150" r="3" fill="#9b5de5" style="animation: pulse 3s infinite;"/>
+  <circle cx="850" cy="90" r="2.5" fill="#00f2fe" style="animation: pulse 4s infinite;"/>
+
+  <!-- Left Side: Glowing Security Shield Logo (floating) -->
+  <g class="floating-logo">
+    <!-- Outer Glow -->
+    <path d="M 110 55 L 160 75 V 135 C 160 170 110 195 110 195 C 110 195 60 170 60 135 V 75 Z" fill="none" stroke="#00f2fe" stroke-width="4" filter="url(#glow)" opacity="0.6"/>
+    <!-- Inner Shield -->
+    <path d="M 110 60 L 155 78 V 132 C 155 163 110 187 110 187 C 110 187 65 163 65 132 V 78 Z" fill="url(#shieldGrad)" opacity="0.85" />
+    <!-- Shield Crosshair/Core Details -->
+    <path d="M 110 80 V 160 M 80 120 H 140" stroke="#0d1117" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="110" cy="120" r="10" fill="#ffffff" />
+    <circle cx="110" cy="120" r="5" fill="#00f2fe" />
   </g>
 
-  <!-- Parallax Constellation Layer 3 (floating-g3) -->
-  <g class="floating-g3">
-    <line x1="480" y1="40" x2="580" y2="80" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.75"/>
-    <line x1="580" y1="80" x2="520" y2="140" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.75"/>
-    
-    <circle cx="480" cy="40" r="3" fill="#ffffff" style="animation: pulse 2.8s infinite;"/>
-    <circle cx="580" cy="80" r="3" fill="#00f2fe" style="animation: pulse 4.2s infinite;"/>
-    <circle cx="520" cy="140" r="2.5" fill="#9b5de5" style="animation: pulse 3.1s infinite;"/>
-  </g>
-
-  <!-- Waving Hand Emoji -->
-  <g transform="translate(180, 145)">
-    <image href="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="48" height="48" />
-  </g>
-
-  <!-- Title Text -->
-  <text x="245" y="178" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="34" font-weight="800" fill="#ffffff">
-    Hi there! I'm
+  <!-- Right Side: Text & Typings -->
+  <!-- Name Greeting (Row 1) - NEVER Overlaps -->
+  <text x="240" y="105" font-family="'Outfit', 'Segoe UI', sans-serif" font-size="34" font-weight="800" fill="#ffffff">
+    Hi, I'm <tspan fill="#00f2fe" filter="url(#glow)">Rudra Narayan Pandey</tspan> 👋
   </text>
-  
-  <!-- Animated Typing Text Container -->
-  <g transform="translate(445, 143)">
-    <!-- Line 1 -->
-    <svg width="450" height="50" class="line1" style="overflow: hidden; position: absolute;">
-      <text x="0" y="35" class="typing-text" font-size="32" fill="#00f2fe">Rudra Narayan Pandey</text>
-      <!-- Blinking Cursor -->
-      <line x1="380" y1="8" x2="380" y2="38" class="cursor" />
+
+  <!-- Subtitle Typing Console (Row 2) - Safely Separated Below Name -->
+  <g transform="translate(240, 130)">
+    <!-- Line 1: Cybersecurity Engineer -->
+    <svg width="600" height="50" class="t-line1" style="overflow: hidden; position: absolute;">
+      <text x="0" y="32" class="typing-text" font-size="24" fill="#9b5de5">> Cybersecurity Engineer</text>
+      <line x1="335" y1="12" x2="335" y2="34" class="cursor" style="stroke: #9b5de5;" />
     </svg>
-    
-    <!-- Line 2 -->
-    <svg width="450" height="50" class="line2" style="overflow: hidden; position: absolute;">
-      <text x="0" y="35" class="typing-text" font-size="32" fill="#9b5de5">a Cybersecurity Engineer</text>
-      <!-- Blinking Cursor -->
-      <line x1="410" y1="8" x2="410" y2="38" class="cursor" style="stroke: #9b5de5;" />
+
+    <!-- Line 2: DevOps & Cloud Security Specialist -->
+    <svg width="600" height="50" class="t-line2" style="overflow: hidden; position: absolute;">
+      <text x="0" y="32" class="typing-text" font-size="24" fill="#00f2fe">> DevOps &amp; Cloud Security Specialist</text>
+      <line x1="480" y1="12" x2="480" y2="34" class="cursor" />
     </svg>
-    
-    <!-- Line 3 -->
-    <svg width="450" height="50" class="line3" style="overflow: hidden; position: absolute;">
-      <text x="0" y="35" class="typing-text" font-size="32" fill="#00f2fe">a DevOps &amp; Cloud Expert</text>
-      <!-- Blinking Cursor -->
-      <line x1="410" y1="8" x2="410" y2="38" class="cursor" />
+
+    <!-- Line 3: B.Tech CSE Student @ VIT Vellore -->
+    <svg width="600" height="50" class="t-line3" style="overflow: hidden; position: absolute;">
+      <text x="0" y="32" class="typing-text" font-size="24" fill="#9b5de5">> B.Tech CSE @ VIT Vellore</text>
+      <line x1="330" y1="12" x2="330" y2="34" class="cursor" style="stroke: #9b5de5;" />
     </svg>
   </g>
 </svg>

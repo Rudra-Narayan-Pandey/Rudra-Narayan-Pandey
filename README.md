@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/normal-badge.png?id=Rudra-Narayan-Pandey&color=00f2fe&style=flat-square&label=Profile+Views" alt="Profile Views" />
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRudra-Narayan-Pandey&count_bg=%2300F2FE&title_bg=%23151821&icon=&icon_color=%23E7E7E7&title=Profile+Views&edge_flat=true" alt="Profile Views" />
 </p>
 
 ---

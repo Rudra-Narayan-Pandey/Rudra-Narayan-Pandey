@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rudra Narayan Pandey - Premium Profile Deck Customizer</title>
+  <title>Rudra Narayan Pandey - Premium Hacker Console Previewer</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,14 +12,14 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     :root {
-      --bg-dark: #0b0c10;
-      --bg-card: #151821;
-      --primary: #00f2fe;
-      --secondary: #9b5de5;
-      --text-main: #f5f6f9;
+      --bg-dark: #05080c;
+      --bg-card: #0b1118;
+      --primary: #39ff14;
+      --secondary: #00f2fe;
+      --text-main: #c9d1d9;
       --text-muted: #8b949e;
-      --border-color: #30363d;
-      --glow: rgba(0, 242, 254, 0.15);
+      --border-color: #1f2937;
+      --glow: rgba(57, 255, 20, 0.15);
     }
 
     * {
@@ -29,7 +29,7 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Fira Code', monospace;
       background-color: var(--bg-dark);
       color: var(--text-main);
       overflow-x: hidden;
@@ -55,7 +55,7 @@
     }
 
     header {
-      background: rgba(21, 24, 33, 0.8);
+      background: rgba(11, 17, 24, 0.8);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-color);
       padding: 1rem 2rem;
@@ -87,13 +87,11 @@
     }
 
     header h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 0.5px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--primary);
+      text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
     }
 
     .header-actions {
@@ -103,24 +101,25 @@
 
     button {
       cursor: pointer;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Fira Code', monospace;
       font-weight: 600;
       transition: all 0.3s ease;
-      border-radius: 6px;
+      border-radius: 4px;
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      color: #0b0c10;
-      border: none;
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
       padding: 0.6rem 1.2rem;
       font-size: 0.9rem;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+      box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+      background: var(--primary);
+      color: #05080c;
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
     }
 
     .btn-secondary {
@@ -132,8 +131,8 @@
     }
 
     .btn-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
+      border-color: var(--secondary);
+      color: var(--secondary);
       background: rgba(0, 242, 254, 0.05);
     }
 
@@ -159,8 +158,7 @@
     }
 
     .sidebar-header h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-main);
     }
 
@@ -176,7 +174,7 @@
 
     label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-muted);
       margin-bottom: 0.5rem;
@@ -188,11 +186,11 @@
       width: 100%;
       background-color: var(--bg-dark);
       border: 1px solid var(--border-color);
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 0.75rem;
-      color: var(--text-main);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
+      color: var(--primary);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
       transition: all 0.3s ease;
     }
 
@@ -208,10 +206,9 @@
     }
 
     .editor-section-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--secondary);
       margin-bottom: 1rem;
       margin-top: 0.5rem;
       display: flex;
@@ -237,7 +234,7 @@
     }
 
     .preview-tabs {
-      background-color: rgba(21, 24, 33, 0.5);
+      background-color: rgba(11, 17, 24, 0.5);
       border-bottom: 1px solid var(--border-color);
       padding: 0 1.5rem;
       display: flex;
@@ -249,7 +246,7 @@
       border: none;
       color: var(--text-muted);
       padding: 1rem 0.5rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       position: relative;
     }
@@ -342,6 +339,20 @@
       text-decoration: underline;
     }
 
+    .gh-markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #161b22;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .gh-markdown-body code {
+      font-family: ui-monospace, SFMono-Regular, SF Pro Mono, Menlo, Consolas, Liberation Mono, monospace;
+    }
+
     /* Raw Code Panel */
     .raw-code-container {
       display: none;
@@ -367,11 +378,11 @@
       bottom: 2rem;
       right: 2rem;
       background-color: var(--primary);
-      color: #0b0c10;
+      color: #05080c;
       padding: 1rem 2rem;
-      border-radius: 6px;
+      border-radius: 4px;
       font-weight: 700;
-      box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+      box-shadow: 0 4px 15px rgba(57, 255, 20, 0.4);
       transform: translateY(150%);
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 100;
@@ -387,11 +398,11 @@
   <header>
     <div class="logo-container">
       <div class="logo-glow"></div>
-      <h1>Rudra Narayan Pandey - Profile Deck</h1>
+      <h1>Rudra Security Console Previewer</h1>
     </div>
     <div class="header-actions">
       <button class="btn-secondary" onclick="resetToDefault()">Reset Defaults</button>
-      <button class="btn-primary" onclick="copyMarkdown()">Copy Markdown README</button>
+      <button class="btn-primary" onclick="copyMarkdown()">Copy Console README</button>
     </div>
   </header>
 
@@ -399,38 +410,48 @@
     <!-- Left panel config -->
     <div class="sidebar">
       <div class="sidebar-header">
-        <h2>README Customize Engine</h2>
+        <h2>README Command Line Settings</h2>
       </div>
       <div class="sidebar-scroll">
         
-        <div class="editor-section-title">Personal Metadata</div>
+        <div class="editor-section-title">Identity Parameters</div>
         <div class="form-group">
-          <label for="name">Display Name</label>
+          <label for="name">Operative Name</label>
           <input type="text" id="name" value="Rudra Narayan Pandey" oninput="updatePreview()">
         </div>
         <div class="form-group">
-          <label for="bio">Philosophical Bio Summary</label>
-          <textarea id="bio" oninput="updatePreview()">I am an Aspiring Cybersecurity Engineer and Developer currently pursuing my B.Tech in Computer Science Engineering at VIT Vellore. I possess hands-on expertise in SOC fundamentals, cloud security, VAPT, and security monitoring acquired through competitive hackathons, industry internships, and designing security projects.</textarea>
+          <label for="location">Location System Node</label>
+          <input type="text" id="location" value="VIT VELLORE (B.TECH CSE)" oninput="updatePreview()">
         </div>
 
-        <div class="editor-section-title">Core Projects</div>
+        <div class="editor-section-title">Active Projects/Repositories</div>
         
         <div class="form-group">
-          <label>Project 1 (Account-Takeover-Detection)</label>
-          <input type="text" id="repo1-desc" value="Designed a real-time web application to identify compromised credentials and suspicious logins using custom IP anomalies, temporal patterns, and geographic risk metrics." oninput="updatePreview()">
+          <label>saie-ecosystem</label>
+          <input type="text" id="p1-desc" value="Self-Healing AI Ecosystem Simulator designed to evaluate AI resilience against deepfake injections, malicious misinformation cascades, and adversarial payloads." oninput="updatePreview()">
         </div>
 
         <div class="form-group">
-          <label>Project 2 (Sudarshana)</label>
-          <input type="text" id="repo2-desc" value="Created a lightweight intrusion detection engine executing custom rule-based heuristics to flag malicious network activities and network traffic anomalies." oninput="updatePreview()">
+          <label>ARAA</label>
+          <input type="text" id="p2-desc" value="Adversarial Reality Alignment Arena benchmark suite built for testing, auditing, and hardening LLM agents under deceptive environments." oninput="updatePreview()">
         </div>
 
         <div class="form-group">
-          <label>Project 3 (NetShield)</label>
-          <input type="text" id="repo3-desc" value="Constructed a threat-monitoring application analyzing network traffic metrics for automated port scan checking and host discovery behavior." oninput="updatePreview()">
+          <label>Gods-eye-x</label>
+          <input type="text" id="p3-desc" value="Reality Alignment & Intelligence Dashboard visualization platform tracking agentic operations, divergence tracking, and ecosystem health." oninput="updatePreview()">
         </div>
 
-        <div class="editor-section-title">Social Links</div>
+        <div class="form-group">
+          <label>sudarshana</label>
+          <input type="text" id="p4-desc" value="Intrusion Detection & Security Monitoring System developed to identify common network attacks and suspicious activities." oninput="updatePreview()">
+        </div>
+
+        <div class="form-group">
+          <label>DORA-Dashboard</label>
+          <input type="text" id="p5-desc" value="Calculates and visualizes deployment frequencies, lead time for changes, change failure rates, and mean time to restore." oninput="updatePreview()">
+        </div>
+
+        <div class="editor-section-title">Social Endpoints</div>
         <div class="form-group">
           <label for="li-url">LinkedIn Link</label>
           <input type="text" id="li-url" value="https://linkedin.com/in/rudra-narayan-pandey-17a09128b" oninput="updatePreview()">
@@ -440,7 +461,7 @@
           <input type="text" id="email-addr" value="vismadebb@gmail.com" oninput="updatePreview()">
         </div>
 
-        <div class="editor-section-title">Favorite Tech Grid</div>
+        <div class="editor-section-title">Tools Array</div>
         <div class="form-group">
           <label for="tech-list">Skill Icons (comma-separated keylist)</label>
           <input type="text" id="tech-list" value="py,java,cpp,bash,git,github,vscode,docker,nginx,postgres,mysql,aws,azure,kali,linux,windows" oninput="updatePreview()">
@@ -471,15 +492,17 @@
     </div>
   </main>
 
-  <div class="toast" id="toast">Markdown README Copied!</div>
+  <div class="toast" id="toast">Console README Copied!</div>
 
   <script>
     const defaultData = {
       name: "Rudra Narayan Pandey",
-      bio: "I am an Aspiring Cybersecurity Engineer and Developer currently pursuing my B.Tech in Computer Science Engineering at VIT Vellore. I possess hands-on expertise in SOC fundamentals, cloud security, VAPT, and security monitoring acquired through competitive hackathons, industry internships, and designing security projects.",
-      repo1: "Designed a real-time web application to identify compromised credentials and suspicious logins using custom IP anomalies, temporal patterns, and geographic risk metrics.",
-      repo2: "Created a lightweight intrusion detection engine executing custom rule-based heuristics to flag malicious network activities and network traffic anomalies.",
-      repo3: "Constructed a threat-monitoring application analyzing network traffic metrics for automated port scan checking and host discovery behavior.",
+      location: "VIT VELLORE (B.TECH CSE)",
+      p1: "Self-Healing AI Ecosystem Simulator designed to evaluate AI resilience against deepfake injections, malicious misinformation cascades, and adversarial payloads.",
+      p2: "Adversarial Reality Alignment Arena benchmark suite built for testing, auditing, and hardening LLM agents under deceptive environments.",
+      p3: "Reality Alignment & Intelligence Dashboard visualization platform tracking agentic operations, divergence tracking, and ecosystem health.",
+      p4: "Intrusion Detection & Security Monitoring System developed to identify common network attacks and suspicious activities.",
+      p5: "Calculates and visualizes deployment frequencies, lead time for changes, change failure rates, and mean time to restore.",
       liUrl: "https://linkedin.com/in/rudra-narayan-pandey-17a09128b",
       emailAddr: "vismadebb@gmail.com",
       techList: "py,java,cpp,bash,git,github,vscode,docker,nginx,postgres,mysql,aws,azure,kali,linux,windows"
@@ -487,10 +510,12 @@
 
     function resetToDefault() {
       document.getElementById('name').value = defaultData.name;
-      document.getElementById('bio').value = defaultData.bio;
-      document.getElementById('repo1-desc').value = defaultData.repo1;
-      document.getElementById('repo2-desc').value = defaultData.repo2;
-      document.getElementById('repo3-desc').value = defaultData.repo3;
+      document.getElementById('location').value = defaultData.location;
+      document.getElementById('p1-desc').value = defaultData.p1;
+      document.getElementById('p2-desc').value = defaultData.p2;
+      document.getElementById('p3-desc').value = defaultData.p3;
+      document.getElementById('p4-desc').value = defaultData.p4;
+      document.getElementById('p5-desc').value = defaultData.p5;
       document.getElementById('li-url').value = defaultData.liUrl;
       document.getElementById('email-addr').value = defaultData.emailAddr;
       document.getElementById('tech-list').value = defaultData.techList;
@@ -499,58 +524,90 @@
 
     function generateMarkdown() {
       const name = document.getElementById('name').value;
-      const bio = document.getElementById('bio').value;
-      const repo1Desc = document.getElementById('repo1-desc').value;
-      const repo2Desc = document.getElementById('repo2-desc').value;
-      const repo3Desc = document.getElementById('repo3-desc').value;
+      const location = document.getElementById('location').value;
+      const p1 = document.getElementById('p1-desc').value;
+      const p2 = document.getElementById('p2-desc').value;
+      const p3 = document.getElementById('p3-desc').value;
+      const p4 = document.getElementById('p4-desc').value;
+      const p5 = document.getElementById('p5-desc').value;
       const liUrl = document.getElementById('li-url').value;
       const emailAddr = document.getElementById('email-addr').value;
       const techList = document.getElementById('tech-list').value;
 
       return `<p align="center">
-  <img src="./cyber_banner.svg?v=3" width="100%" alt="Rudra's Cyber AI Banner" />
+  <img src="./cyber_banner.svg?v=4" width="100%" alt="Rudra's Cyber Terminal HUD" />
 </p>
 
 <p align="center">
   <a href="${liUrl}" target="_blank">
-    <img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/TERMINAL-LINKEDIN-00FF00?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn" />
   </a>
   <a href="mailto:${emailAddr}">
-    <img src="https://img.shields.io/badge/EMAIL-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/CONSOLE-EMAIL-00F2FE?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
   </a>
   <a href="https://github.com/Rudra-Narayan-Pandey">
-    <img src="https://img.shields.io/badge/GITHUB-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/SHELL-GITHUB-ffffff?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRudra-Narayan-Pandey&count_bg=%2300F2FE&title_bg=%23151821&icon=&icon_color=%23E7E7E7&title=Profile+Views&edge_flat=true" alt="Profile Views" />
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRudra-Narayan-Pandey&count_bg=%2339ff14&title_bg=%2310141b&icon=&icon_color=%23E7E7E7&title=PACKET_IDS_VISITS&edge_flat=true" alt="Profile Views" />
 </p>
 
----
-
-## 🌌 Professional Overview
-
-${bio}
-
-🏆 **Meta PyTorch OpenEnv Hackathon 2026 Finalist** — Selected in the top tier out of 52,000+ global developers to compete in the Grand Finale in Bangalore.
-
----
-
-## 🎖️ Credentials & Certifications
-
-<p align="left">
-  <a href="https://learn.microsoft.com" target="_blank">
-    <img src="https://img.shields.io/badge/Microsoft_Certified-DevOps_Engineer_Expert-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="DevOps Engineer Expert" />
-  </a>
-  <a href="https://learn.microsoft.com" target="_blank">
-    <img src="https://img.shields.io/badge/Microsoft_Certified-Azure_Security_Fundamentals-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure Security Fundamentals" />
-  </a>
-</p>
+\`\`\`ini
+[+] OPERATIVE IDENTITY : ${name.toUpperCase()}
+[+] CLEARANCE STATUS   : LEVEL 4 (ROOT ACCESS)
+[+] SPECIALIZATION     : CYBERSECURITY ENGINEER | DEV
+[+] LOCATION           : ${location.toUpperCase()}
+\`\`\`
 
 ---
 
-## 🛠️ Cyber Arsenal & Tech Stack
+### 💻 SYSTEM CREDENTIALS & LICENSES
+
+\`\`\`diff
++ [CERTIFICATE] Microsoft DevOps Engineer Expert (AZ-400)
++ [CERTIFICATE] Microsoft Azure Cyber Security Fundamentals
+\`\`\`
+
+---
+
+### 📂 SYSTEM INVENTORY // RUNNING NODES
+
+\`\`\`
+┌──────────────────────────────────────────────────────────────────────────┐
+│  ACTIVE NODE CATALOG & PROJECT DEPLOYMENTS                              │
+└──────────────────────────────────────────────────────────────────────────┘
+\`\`\`
+
+#### 🟢 **node://saie-ecosystem**
+> **Description:** Self-Healing AI Ecosystem Simulator
+> *   ${p1}
+> *   *Status:* **ONLINE / ROBUST**
+
+#### 🟢 **node://ARAA**
+> **Description:** Adversarial Reality Alignment Arena
+> *   ${p2}
+> *   *Status:* **ONLINE / AUDITED**
+
+#### 🟢 **node://Gods-eye-x**
+> **Description:** Reality Alignment & Intelligence Dashboard
+> *   ${p3}
+> *   *Status:* **ONLINE / ACTIVE**
+
+#### 🟢 **node://sudarshana**
+> **Description:** Intrusion Detection & Security Monitoring System
+> *   ${p4}
+> *   *Status:* **ONLINE / INTERACTIVE**
+
+#### 🟢 **node://DORA-Dashboard**
+> **Description:** DevOps Research and Assessment metrics engine
+> *   ${p5}
+> *   *Status:* **ONLINE / OPERATIONAL**
+
+---
+
+### 🧠 CYBER ARSENAL & TECH STACK
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -558,50 +615,61 @@ ${bio}
   </a>
 </p>
 
----
-
-## 🛡️ Core Security Engineering Projects
-
-### 🌀 [Account-Takeover-Detection](https://github.com/Rudra-Narayan-Pandey)
-> **Microsoft Sentinel-Inspired Account Takeover Detection System**
-> * ${repo1Desc}
-
-### ⚔️ [Sudarshana](https://github.com/Rudra-Narayan-Pandey/sudarshana)
-> **Intrusion Detection & Security Monitoring System**
-> * ${repo2Desc}
-
-### 👁️ [NetShield](https://github.com/Rudra-Narayan-Pandey)
-> **Cloud Network Threat Monitoring Platform**
-> * ${repo3Desc}
+\`\`\`yaml
+Programming: [Python, Java, C, C++]
+Security-Tools: [Wireshark, Nmap, Metasploit, Burp Suite, OWASP ZAP, Nikto, Enum4linux, Kali Linux]
+Cloud-SIEM: [Microsoft Defender for Cloud, Azure Security Center, Azure IAM, Microsoft Sentinel, AWS]
+Scripting-OS: [Bash, Linux Shell, Windows Kernel]
+Concepts: [Cryptography, PKI, SIEM, SOC Fundamentals, Threat Detection, Log Analysis, CI/CD Basics]
+\`\`\`
 
 ---
 
-## 💼 Professional Experience
+### 📜 OPERATIVE EMPLOYMENT LOGS
 
-### 🔴 **Redynox**
-*Cybersecurity Analyst Intern* | *Oct 2025 – Nov 2025*
-*   Monitored live network streams using **Wireshark** to parse packets and discover security alerts.
-*   Conducted web application testing using **OWASP ZAP** to uncover critical software vulnerabilities.
+\`\`\`bash
+root@security-core:~$ cat employment_history.log
+\`\`\`
 
-### 🔵 **Secuerium Technologies**
-*Security Engineer Intern* | *Aug 2025 – Sept 2025*
-*   Conducted hands-on Vulnerability Assessment and Penetration Testing (**VAPT**) across sandboxed targets.
-*   Orchestrated active scans and network reconnaissance utilizing **Nmap**, **Metasploit**, **Nikto**, and **Enum4linux**.
+#### 🟥 **REDYNOX — Cybersecurity Analyst Intern**
+*Period: Oct 2025 – Nov 2025*
+*   Analyzed live packet data using **Wireshark** to diagnose network intrusions.
+*   Executed security tests using **OWASP ZAP** and compiled vulnerability mitigation protocols.
 
-### 🟡 **Wayspire**
-*Cloud Security Associate Intern* | *Apr 2024 – Jun 2024*
-*   Analyzed cloud environments for misconfigurations using **Microsoft Defender for Cloud** and **Azure Security Center**.
-*   Audited **Azure IAM** policies, Role-Based Access Controls (RBAC), and security baselines.
+#### 🟦 **SECUERIUM TECHNOLOGIES — Security Engineer Intern**
+*Period: Aug 2025 – Sept 2025*
+*   Conducted Vulnerability Assessment and Penetration Testing (**VAPT**) on sandbox systems.
+*   Utilized **Nmap**, **Metasploit**, **Nikto**, and **Enum4linux** to discover vulnerabilities.
 
----
-
-## 🎓 Academic Background
-
-*   **B.Tech in Computer Science Engineering** — VIT Vellore (*2023 – Present*)
+#### 🟨 **WAYSPIRE — Cloud Security Associate Intern**
+*Period: Apr 2024 – Jun 2024*
+*   Audited **Azure IAM** policies, RBAC access controls, and resource security settings.
+*   Managed threat monitoring feeds using **Microsoft Defender for Cloud** & **Azure Security Center**.
 
 ---
 
-## 📊 Live Metrics & Activity
+### 🏆 ACHIEVEMENT LOGS
+
+\`\`\`bash
+root@security-core:~$ cat achievements_audit.json
+\`\`\`
+\`\`\`json
+{
+  "Meta_PyTorch_OpenEnv_Hackathon": {
+    "Rank": "Grand Finale Finalist (2026)",
+    "Summary": "Selected in the top tier out of 52,000+ registered global developers to compete on-campus in Bangalore.",
+    "Interview_Track": "Meta and Hugging Face AI teams"
+  },
+  "Anakin_Build_a_thon": {
+    "Status": "Graduate / Certified Completion",
+    "Credentials": "VERIFIED"
+  }
+}
+\`\`\`
+
+---
+
+### 📈 METRICS ENGINE & SYSTEM AUDITS
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Rudra-Narayan-Pandey&show_icons=true&theme=tokyonight&locale=en" alt="Rudra's GitHub Stats" width="48.5%" />
@@ -615,7 +683,7 @@ ${bio}
 ---
 
 <p align="center">
-  🛡️ <b>Secure. Automate. Defend.</b>
+  ☣️ <b>SYSTEM ACCESS COMPLETED. EXECUTION TERMINATED.</b>
 </p>
 `;
     }

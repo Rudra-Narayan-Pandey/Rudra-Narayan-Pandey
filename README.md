@@ -1,3 +1,9 @@
+```diff
++ [NETSHIELD] ONLINE
++ [FIREWALL] ARMED
++ [ENCRYPTION] AES-256
+```
+
 <p align="center">
   <img src="./cyber_banner.svg?v=7" width="100%" alt="Rudra's Cyber Terminal HUD" />
 </p>
@@ -177,6 +183,25 @@
   <p align="center">
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rudra-Narayan-Pandey&theme=tokyonight&border=39ff14&background=020617" alt="Rudra's GitHub Streak" width="98%" />
   </p>
+</details>
+
+---
+
+<details open>
+  <summary><b><kbd>git log --oneline --color</kbd></b></summary>
+  <br>
+  <pre lang="diff">
++ 70401b6 (HEAD -> main) ☈ [ROOT.ACCESS] SYSTEM COMPROMISED. GOD MODE ACTIVATED.
++ 7e1a7da ☈ [SYNC] CALIBRATING BIOMETRIC CYBER-FACE SCANNERS
++ b21c953 ☈ [SYS.DEFENSE] ARMING ORBITAL COUNTER-MEASURE PROTOCOLS
++ bc80180 ☈ [UI.RENDER] INITIALIZING HOLOGRAPHIC SCALAR FIELD GENERATOR
++ d103085 ☈ [AUTH.FORGE] SPOOFING ROOT CREDENTIALS - ACCESS GRANTED
++ 2da98c3 ☈ [INJECT] UPLOADING GOD_MODE_PAYLOAD.BIN TO MAINFRAME
++ 96e3194 ☈ [OVERRIDE] BYPASSING MAINFRAME FIREWALLS via QUANTUM TUNNEL
++ b785e1d ☈ [NETWORK.UPLINK] ESTABLISHING EXTRATERRESTRIAL RELAY CONNECTION
++ c473cf5 ☈ [MODULE.LOAD] DECRYPTING NEURO-LINK SECTOR 7G
++ 31fc8ed ☈ [SYS.INIT] BOOT SEQUENCE INITIATED... ALIEN PROTOCOL ENGAGED
+  </pre>
 </details>
 
 ---

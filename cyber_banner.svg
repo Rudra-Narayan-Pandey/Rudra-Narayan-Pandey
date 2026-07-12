@@ -1,244 +1,185 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="100%" height="300">
   <defs>
-    <!-- Glow Filters -->
-    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <filter id="glow-red" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#39ff14" />
-      <stop offset="50%" stop-color="#00f2fe" />
-      <stop offset="100%" stop-color="#9b5de5" />
+    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-red" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    
+    <linearGradient id="grid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,242,254,0)" />
+      <stop offset="50%" stop-color="rgba(0,242,254,0.15)" />
+      <stop offset="100%" stop-color="rgba(0,242,254,0)" />
     </linearGradient>
   </defs>
 
   <style>
-    @keyframes sweep {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    
+    .hud-spin-slow { transform-origin: 120px 140px; animation: spin 15s linear infinite; }
+    .hud-spin-med { transform-origin: 120px 140px; animation: spin-rev 10s linear infinite; }
+    .hud-spin-fast { transform-origin: 120px 140px; animation: spin 6s linear infinite; }
+    
+    /* Terminal sequence */
+    .t-l1 { animation: t-fade 12s infinite; animation-delay: 0s; opacity: 0; }
+    .t-l2 { animation: t-fade 12s infinite; animation-delay: 1s; opacity: 0; }
+    .t-l3 { animation: t-fade 12s infinite; animation-delay: 2s; opacity: 0; }
+    .t-l4 { animation: t-fade 12s infinite; animation-delay: 3s; opacity: 0; }
+    .t-l5 { animation: t-fade 12s infinite; animation-delay: 4.5s; opacity: 0; }
+    .t-l6 { animation: t-fade 12s infinite; animation-delay: 6s; opacity: 0; }
+    .t-l7 { animation: t-fade 12s infinite; animation-delay: 7.5s; opacity: 0; }
+    .t-l8 { animation: t-fade 12s infinite; animation-delay: 9s; opacity: 0; }
+    @keyframes t-fade {
+      0%, 99% { opacity: 1; }
+      100% { opacity: 0; }
     }
-    @keyframes scanline {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(300px); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.95; }
-    }
-    @keyframes pulse-fast {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.9; }
-    }
-    /* Oscilloscope pulse line movement */
-    @keyframes pulse-flow {
-      0% { stroke-dashoffset: 400; }
-      100% { stroke-dashoffset: 0; }
-    }
-    /* Terminal sequence animation keys */
-    @keyframes line-1 { 0%, 5% { opacity: 0; } 6%, 100% { opacity: 1; } }
-    @keyframes line-2 { 0%, 15% { opacity: 0; } 16%, 100% { opacity: 1; } }
-    @keyframes line-3 { 0%, 25% { opacity: 0; } 26%, 100% { opacity: 1; } }
-    @keyframes line-4 { 0%, 35% { opacity: 0; } 36%, 100% { opacity: 1; } }
-    @keyframes line-5 { 0%, 48% { opacity: 0; } 49%, 100% { opacity: 1; } }
-    @keyframes line-6 { 0%, 60% { opacity: 0; } 61%, 100% { opacity: 1; } }
-    @keyframes line-7 { 0%, 75% { opacity: 0; } 76%, 100% { opacity: 1; } }
-    @keyframes line-8 { 0%, 88% { opacity: 0; } 89%, 100% { opacity: 1; } }
-    @keyframes cursor-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-
-    .radar-sweep {
-      animation: sweep 9s infinite linear;
-      transform-origin: 120px 150px;
-    }
-    .scanline-trigger {
-      animation: scanline 5s infinite linear;
-    }
-    .scope-line {
-      stroke-dasharray: 20 180;
-      animation: pulse-flow 4s infinite linear;
-    }
-    .matrix-col {
-      stroke: #39ff14;
-      stroke-dasharray: 30 150;
-      animation: pulse-flow 5s infinite linear;
-    }
-    .t1 { animation: line-1 14s infinite steps(1); }
-    .t2 { animation: line-2 14s infinite steps(1); }
-    .t3 { animation: line-3 14s infinite steps(1); }
-    .t4 { animation: line-4 14s infinite steps(1); }
-    .t5 { animation: line-5 14s infinite steps(1); }
-    .t6 { animation: line-6 14s infinite steps(1); }
-    .t7 { animation: line-7 14s infinite steps(1); }
-    .t8 { animation: line-8 14s infinite steps(1); }
-    .cursor-active { animation: cursor-blink 0.8s infinite; }
   </style>
 
-  <!-- Deep Tactical Black Background -->
-  <rect width="100%" height="100%" fill="#05080c" rx="12"/>
-
-  <!-- Scanning horizontal line -->
-  <line class="scanline-trigger" x1="0" y1="0" x2="1000" y2="0" stroke="rgba(57, 255, 20, 0.08)" stroke-width="4" />
-
-  <!-- Cyber grid overlay -->
-  <path d="M 0 30 H 1000 M 0 60 H 1000 M 0 90 H 1000 M 0 120 H 1000 M 0 150 H 1000 M 0 180 H 1000 M 0 210 H 1000 M 0 240 H 1000 M 0 270 H 1000" stroke="#09131e" stroke-width="0.8" />
-  <path d="M 30 0 V 300 M 60 0 V 300 M 90 0 V 300 M 120 0 V 300 M 150 0 V 300 M 180 0 V 300 M 210 0 V 300 M 240 0 V 300 M 270 0 V 300 M 300 0 V 300 M 670 0 V 300 M 700 0 V 300 M 730 0 V 300 M 760 0 V 300 M 790 0 V 300 M 820 0 V 300 M 850 0 V 300 M 880 0 V 300 M 910 0 V 300 M 940 0 V 300 M 970 0 V 300" stroke="#09131e" stroke-width="0.8" />
-
-  <!-- Background Digital Columns -->
-  <line class="matrix-col" x1="685" y1="0" x2="685" y2="300" opacity="0.2"/>
-  <line class="matrix-col" x1="975" y1="20" x2="975" y2="300" opacity="0.1" style="animation-duration: 3s;"/>
-
-  <!-- ==================== LEFT PANEL: HOLOGRAPHIC FACE SCAN ==================== -->
-  <g transform="translate(0, 0)">
-    <!-- Scanning HUD Enclosure/Grid -->
-    <circle cx="120" cy="140" r="85" fill="none" stroke="#102535" stroke-width="1"/>
-    <circle cx="120" cy="140" r="95" fill="none" stroke="#16384f" stroke-width="1.5" stroke-dasharray="5 10"/>
-    <circle cx="120" cy="140" r="105" fill="none" stroke="#1a4663" stroke-width="0.8" opacity="0.5"/>
-
-    <!-- Target Frame Corners -->
-    <path d="M 45 70 V 60 H 55 M 185 60 H 195 V 70 M 195 210 V 220 H 185 M 55 220 H 45 V 210" fill="none" stroke="#00f2fe" stroke-width="1.5"/>
-
-    <!-- Main Mask/Skull Base (Transparent blue-glow fill) -->
-    <path d="M 120 70 C 85 70, 70 90, 70 120 C 70 145, 80 155, 85 165 L 95 195 C 100 205, 110 210, 120 210 C 130 210, 140 205, 145 195 L 155 165 C 160 155, 170 145, 170 120 C 170 90, 155 70, 120 70 Z" fill="rgba(5, 15, 25, 0.7)" stroke="#00f2fe" stroke-width="1" filter="url(#glow-cyan)"/>
-    
-    <!-- Outer Contour highlights -->
-    <path d="M 120 70 C 85 70, 70 90, 70 120 C 70 145, 80 155, 85 165 L 95 195 C 100 205, 110 210, 120 210 C 130 210, 140 205, 145 195 L 155 165 C 160 155, 170 145, 170 120 C 170 90, 155 70, 120 70 Z" fill="none" stroke="#39ff14" stroke-width="2" filter="url(#glow-green)" opacity="0.8"/>
-
-    <!-- Visor Eye Sockets -->
-    <polygon points="82,115 110,115 106,132 84,132" fill="none" stroke="#00f2fe" stroke-width="1.5" filter="url(#glow-cyan)"/>
-    <polygon points="130,115 158,115 156,132 134,132" fill="none" stroke="#00f2fe" stroke-width="1.5" filter="url(#glow-cyan)"/>
-
-    <!-- Cyber Target Eyes -->
-    <circle cx="95" cy="123" r="3.5" fill="#39ff14" filter="url(#glow-green)"/>
-    <circle cx="95" cy="123" r="7" fill="none" stroke="#39ff14" stroke-width="0.8"/>
-    
-    <circle cx="145" cy="123" r="3.5" fill="#ff3333" filter="url(#glow-red)" style="animation: pulse-fast 1s infinite;"/>
-    <line x1="138" y1="123" x2="152" y2="123" stroke="#ff3333" stroke-width="0.8"/>
-    <line x1="145" y1="116" x2="145" y2="130" stroke="#ff3333" stroke-width="0.8"/>
-
-    <!-- Nasal Cavity -->
-    <polygon points="120,138 112,152 128,152" fill="#07121c" stroke="#16384f" stroke-width="1"/>
-
-    <!-- Respirator / Mouth Grille -->
-    <path d="M 100 168 H 140 M 103 175 H 137 M 107 182 H 133 M 112 189 H 128" stroke="#39ff14" stroke-dasharray="2 2" stroke-width="2" filter="url(#glow-green)"/>
-
-    <!-- Forehead Circuit Lines -->
-    <path d="M 120 70 V 55 H 100" fill="none" stroke="#39ff14" stroke-width="1" stroke-dasharray="1 2"/>
-    <circle cx="100" cy="55" r="1.5" fill="#39ff14"/>
-    <path d="M 120 70 V 55 H 140" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="1 2"/>
-    <circle cx="140" cy="55" r="1.5" fill="#00f2fe"/>
-
-    <!-- Cheek Circuit Board Traces -->
-    <path d="M 70 135 H 52 V 155" fill="none" stroke="#39ff14" stroke-width="1"/>
-    <circle cx="52" cy="155" r="2" fill="#39ff14" filter="url(#glow-green)"/>
-
-    <path d="M 170 135 H 188 V 155" fill="none" stroke="#00f2fe" stroke-width="1"/>
-    <circle cx="188" cy="155" r="2" fill="#00f2fe" filter="url(#glow-cyan)"/>
-
-    <!-- Sweeping Laser Scan Line -->
-    <line x1="45" y1="60" x2="195" y2="60" stroke="#39ff14" stroke-width="2" filter="url(#glow-green)">
-      <animateTransform attributeName="transform" type="translate" values="0,0; 0,160; 0,0" dur="4.5s" repeatCount="indefinite"/>
-    </line>
-
-    <!-- Side Status Data -->
-    <text x="25" y="260" font-family="'Fira Code', monospace" font-size="8" fill="#00f2fe" opacity="0.7">OPERATIVE: RUDRA_N_PANDEY</text>
-    <text x="25" y="272" font-family="'Fira Code', monospace" font-size="8" fill="#39ff14" opacity="0.8">SCAN STATUS: 99.88% COMPLETE</text>
-    <text x="25" y="284" font-family="'Fira Code', monospace" font-size="8" fill="#ff3333" opacity="0.7">THREAT ENVELOPE: EXCLUDED</text>
-  </g>
-
-  <!-- ==================== MIDDLE PANEL: TACTICAL TERMINAL ==================== -->
-  <!-- Main Window -->
-  <rect x="250" y="25" width="410" height="250" fill="rgba(6, 10, 18, 0.95)" stroke="#1c3b53" stroke-width="2" rx="6" />
+  <!-- Deep Space Background -->
+  <rect width="100%" height="100%" fill="#030712" rx="12"/>
   
-  <!-- Titlebar -->
-  <path d="M 250 31 C 250 27 254 25 258 25 H 652 C 656 25 660 29 660 33 V 55 H 250 Z" fill="#0c141d" />
-  <circle cx="270" cy="40" r="5" fill="#ff5f56" />
-  <circle cx="285" cy="40" r="5" fill="#ffbd2e" />
-  <circle cx="300" cy="40" r="5" fill="#27c93f" />
-  <text x="325" y="45" font-family="'Fira Code', monospace" font-size="12" fill="#8892b0" font-weight="700">security-console@rudra:~</text>
+  <!-- High-tech Grid -->
+  <rect width="100%" height="100%" fill="url(#grid-grad)" opacity="0.4"/>
+  <path d="M0 30 H1000 M0 60 H1000 M0 90 H1000 M0 120 H1000 M0 150 H1000 M0 180 H1000 M0 210 H1000 M0 240 H1000 M0 270 H1000" stroke="#0f172a" stroke-width="1" opacity="0.7"/>
+  <path d="M30 0 V300 M60 0 V300 M90 0 V300 M120 0 V300 M150 0 V300 M180 0 V300 M210 0 V300 M240 0 V300 M270 0 V300 M300 0 V300 M330 0 V300 M360 0 V300 M390 0 V300 M420 0 V300 M450 0 V300 M480 0 V300 M510 0 V300 M540 0 V300 M570 0 V300 M600 0 V300 M630 0 V300 M660 0 V300 M690 0 V300 M720 0 V300 M750 0 V300 M780 0 V300 M810 0 V300 M840 0 V300 M870 0 V300 M900 0 V300 M930 0 V300 M960 0 V300 M990 0 V300" stroke="#0f172a" stroke-width="1" opacity="0.7"/>
 
-  <!-- Output Log Lines -->
-  <g transform="translate(265, 75)" font-family="'Fira Code', 'Courier New', monospace" font-size="12" font-weight="700">
-    <!-- Log 1 -->
-    <g class="t1">
-      <text x="0" y="15" fill="#8892b0">rudra@core:~$ <tspan fill="#ffffff">./netshield_audit.sh</tspan></text>
+  <!-- LEFT: HOLOGRAPHIC FACE & HUD -->
+  <g transform="translate(20, 10)">
+    <!-- Rotating Rings -->
+    <circle cx="120" cy="140" r="115" class="hud-spin-slow" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="10 30 50 20" opacity="0.8" filter="url(#glow-cyan)"/>
+    <circle cx="120" cy="140" r="105" class="hud-spin-med" fill="none" stroke="#39ff14" stroke-width="2.5" stroke-dasharray="2 10 30 40 5 10" opacity="0.9" filter="url(#glow-green)"/>
+    <circle cx="120" cy="140" r="95" class="hud-spin-fast" fill="none" stroke="#1e3a8a" stroke-width="3" stroke-dasharray="80 150"/>
+    <circle cx="120" cy="140" r="85" fill="none" stroke="#102535" stroke-width="1"/>
+
+    <!-- Corner Brackets -->
+    <path d="M 15 35 V 15 H 35 M 205 15 H 225 V 35 M 225 245 V 265 H 205 M 35 265 H 15 V 245" fill="none" stroke="#00f2fe" stroke-width="2.5" filter="url(#glow-cyan)"/>
+
+    <!-- The Skull/Mask Base -->
+    <path d="M 120 70 C 85 70, 70 90, 70 120 C 70 145, 80 155, 85 165 L 95 195 C 100 205, 110 210, 120 210 C 130 210, 140 205, 145 195 L 155 165 C 160 155, 170 145, 170 120 C 170 90, 155 70, 120 70 Z" fill="rgba(2, 6, 23, 0.9)" stroke="#39ff14" stroke-width="2" filter="url(#glow-green)"/>
+    
+    <!-- Geometric Details / Plates -->
+    <path d="M 120 70 V 105 L 105 115 H 80 C 80 95, 95 75, 120 70 Z" fill="rgba(0, 242, 254, 0.15)"/>
+    <path d="M 120 70 V 105 L 135 115 H 160 C 160 95, 145 75, 120 70 Z" fill="rgba(0, 242, 254, 0.15)"/>
+    
+    <!-- Eyes -->
+    <polygon points="82,115 110,115 106,132 84,132" fill="#020617" stroke="#00f2fe" stroke-width="2" filter="url(#glow-cyan)"/>
+    <polygon points="130,115 158,115 156,132 134,132" fill="#020617" stroke="#00f2fe" stroke-width="2" filter="url(#glow-cyan)"/>
+
+    <!-- Left Eye Tracker -->
+    <circle cx="95" cy="123" r="3.5" fill="#39ff14" filter="url(#glow-green)"/>
+    <circle cx="95" cy="123" r="8" fill="none" stroke="#39ff14" stroke-width="1.5" stroke-dasharray="2 4">
+      <animateTransform attributeName="transform" type="rotate" values="0 95 123; 360 95 123" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Right Eye Threat Lock -->
+    <circle cx="145" cy="123" r="4.5" fill="#ef4444" filter="url(#glow-red)" style="animation: pulse 0.3s infinite alternate;"/>
+    <path d="M 133 123 H 157 M 145 111 V 135" stroke="#ef4444" stroke-width="1"/>
+
+    <!-- Nasal / Respirator -->
+    <polygon points="120,138 112,152 128,152" fill="#020617" stroke="#1e3a8a" stroke-width="2"/>
+    <path d="M 100 168 H 140 M 103 175 H 137 M 107 182 H 133 M 112 189 H 128" stroke="#39ff14" stroke-dasharray="4 3" stroke-width="2.5" filter="url(#glow-green)"/>
+
+    <!-- Laser Scan Line & Gradient -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,50; 0,230; 0,50" dur="3s" repeatCount="indefinite"/>
+      <line x1="20" y1="0" x2="220" y2="0" stroke="#39ff14" stroke-width="3" filter="url(#glow-green)"/>
+      <rect x="20" y="-40" width="200" height="40" fill="url(#grid-grad)" opacity="0.8"/>
     </g>
-    <!-- Log 2 -->
-    <g class="t2">
-      <text x="0" y="35" fill="#39ff14">[+] INITIALIZING NETSHIELD THREAT ID...</text>
-    </g>
-    <!-- Log 3 -->
-    <g class="t3">
-      <text x="0" y="55" fill="#ff3333">[ALERT] SUSPICIOUS LOGINS DETECTED</text>
-    </g>
-    <!-- Log 4 -->
-    <g class="t4">
-      <text x="0" y="75" fill="#00f2fe">[+] EXEC SUDARSHANA IDS RECON-BLOCK...</text>
-    </g>
-    <!-- Log 5 -->
-    <g class="t5">
-      <text x="0" y="95" fill="#39ff14">[SUCCESS] TARGET SECURED. DISMISSED.</text>
-    </g>
-    <!-- Log 6 -->
-    <g class="t6">
-      <text x="0" y="125" fill="#8892b0">rudra@core:~$ <tspan fill="#ffffff">git credentials load</tspan></text>
-    </g>
-    <!-- Log 7 -->
-    <g class="t7">
-      <text x="0" y="145" fill="#9b5de5">[+] KEY CLEARANCE: OPERATIVE LEVEL 4</text>
-      <text x="0" y="165" fill="#9b5de5">[+] ROOT: Rudra Narayan Pandey</text>
-    </g>
-    <!-- Active Prompt Cursor -->
-    <g class="t8" transform="translate(0, 185)">
-      <text x="0" y="0" fill="#8892b0">rudra@core:~$ <tspan fill="#39ff14">_</tspan></text>
-      <rect class="cursor-active" x="110" y="-12" width="6" height="14" fill="#39ff14" />
+
+    <text x="-5" y="280" font-family="'Fira Code', monospace" font-size="10" fill="#00f2fe" opacity="0.9" font-weight="bold" filter="url(#glow-cyan)">ID: RUDRA_N_PANDEY</text>
+    <text x="145" y="280" font-family="'Fira Code', monospace" font-size="10" fill="#39ff14" opacity="0.9" font-weight="bold" filter="url(#glow-green)">AUTH: ROOT</text>
+  </g>
+
+  <!-- CENTER: TACTICAL TERMINAL -->
+  <g transform="translate(290, 20)">
+    <!-- Glassmorphism Panel -->
+    <rect x="0" y="0" width="390" height="260" fill="rgba(15, 23, 42, 0.85)" stroke="#3b82f6" stroke-width="2" rx="8" />
+    <path d="M 0 35 C 0 30 4 26 9 26 H 381 C 386 26 390 30 390 35 V 35 H 0 Z" fill="#020617" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="20" cy="18" r="6" fill="#ef4444" />
+    <circle cx="40" cy="18" r="6" fill="#eab308" />
+    <circle cx="60" cy="18" r="6" fill="#22c55e" />
+    <text x="80" y="22" font-family="'Fira Code', monospace" font-size="12" fill="#cbd5e1" font-weight="700">root@cyber-core:~</text>
+
+    <g font-family="'Fira Code', monospace" font-size="13" font-weight="bold" transform="translate(20, 65)">
+      <g class="t-l1"><text y="0" fill="#94a3b8">root@deck:~$ <tspan fill="#f8fafc">./init_sec_protocol.sh</tspan></text></g>
+      <g class="t-l2"><text y="22" fill="#39ff14">[+] BOOTING NETSHIELD v3.1.4...</text></g>
+      <g class="t-l3"><text y="44" fill="#39ff14">[+] ESTABLISHING SECURE TUNNEL (AES-256)</text></g>
+      <g class="t-l4"><text y="66" fill="#ef4444" filter="url(#glow-red)">[!] CRITICAL: INBOUND SCAN DETECTED</text></g>
+      <g class="t-l5"><text y="88" fill="#00f2fe">[*] DEPLOYING COUNTER-MEASURES (SUDARSHANA)</text></g>
+      <g class="t-l6"><text y="110" fill="#39ff14">[+] THREAT NEUTRALIZED. LOGGED TO DB.</text></g>
+      <g class="t-l7">
+        <text y="145" fill="#94a3b8">root@deck:~$ <tspan fill="#f8fafc">whoami</tspan></text>
+        <text y="167" fill="#eab308">RUDRA NARAYAN PANDEY - CYBER SEC ENG.</text>
+      </g>
+      <g class="t-l8">
+        <text y="200" fill="#94a3b8">root@deck:~$ <tspan fill="#39ff14">_</tspan></text>
+        <rect x="105" y="190" width="10" height="14" fill="#39ff14" style="animation: blink 1s infinite;" filter="url(#glow-green)"/>
+      </g>
     </g>
   </g>
 
-  <!-- ==================== RIGHT PANEL: SYSTEM MONITOR ==================== -->
-  <g transform="translate(680, 25)">
-    <!-- Frame -->
-    <rect x="0" y="0" width="300" height="250" fill="rgba(6, 10, 18, 0.9)" stroke="#1c3b53" stroke-width="2" rx="6" />
+  <!-- RIGHT: THREAT NETWORK MAP -->
+  <g transform="translate(710, 20)">
+    <rect x="0" y="0" width="270" height="260" fill="rgba(15, 23, 42, 0.6)" stroke="#3b82f6" stroke-width="2" rx="8" />
+    <text x="20" y="28" font-family="'Outfit', sans-serif" font-size="14" fill="#00f2fe" font-weight="900" letter-spacing="1" filter="url(#glow-cyan)">LIVE GLOBAL NODES</text>
+    <line x1="20" y1="35" x2="250" y2="35" stroke="#1e3a8a" stroke-width="2"/>
     
-    <!-- Titlebar -->
-    <path d="M 680 31 C 680 27 684 25 688 25 H 972 C 976 25 980 29 980 33 V 55 H 680 Z" fill="#0c141d" transform="translate(-680, -25)"/>
-    <text x="15" y="20" font-family="'Outfit', sans-serif" font-size="12" fill="#00f2fe" font-weight="800">SYSTEM DIAGNOSTICS</text>
-    <circle cx="280" cy="18" r="4" fill="#39ff14" filter="url(#glow-green)"/>
+    <g transform="translate(0, 20)">
+      <!-- Network Connections (Lines) -->
+      <path d="M 40 70 L 135 130" stroke="rgba(57, 255, 20, 0.6)" stroke-width="2"/>
+      <path d="M 135 130 L 220 50" stroke="rgba(239, 68, 68, 0.6)" stroke-width="2" stroke-dasharray="4 2"/>
+      <path d="M 135 130 L 230 180" stroke="rgba(0, 242, 254, 0.6)" stroke-width="2"/>
+      <path d="M 40 70 L 220 50" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5"/>
+      <path d="M 135 130 L 60 190" stroke="rgba(168, 85, 247, 0.6)" stroke-width="2"/>
+      <path d="M 60 190 L 230 180" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" stroke-dasharray="2 4"/>
+      
+      <!-- Moving Packets -->
+      <circle r="3.5" fill="#39ff14" filter="url(#glow-green)">
+        <animateMotion dur="2s" repeatCount="indefinite" path="M 40 70 L 135 130" />
+      </circle>
+      <circle r="3.5" fill="#39ff14" filter="url(#glow-green)">
+        <animateMotion dur="2s" repeatCount="indefinite" path="M 40 70 L 135 130" begin="1s"/>
+      </circle>
+      
+      <circle r="3.5" fill="#00f2fe" filter="url(#glow-cyan)">
+        <animateMotion dur="3s" repeatCount="indefinite" path="M 135 130 L 230 180" />
+      </circle>
 
-    <!-- Pulse/Oscilloscope Waveform -->
-    <path class="scope-line" d="M 15 65 L 45 65 L 55 45 L 65 85 L 75 65 L 140 65 L 150 40 L 160 90 L 170 65 L 285 65" fill="none" stroke="#39ff14" stroke-width="2.5" filter="url(#glow-green)"/>
-    <text x="15" y="105" font-family="'Fira Code', monospace" font-size="10" fill="#8892b0">HEARTBEAT FREQ: 72 Hz</text>
+      <circle r="4" fill="#ef4444" filter="url(#glow-red)">
+        <animateMotion dur="1.5s" repeatCount="indefinite" path="M 220 50 L 135 130" />
+      </circle>
+      
+      <circle r="3.5" fill="#a855f7" filter="url(#glow-cyan)">
+        <animateMotion dur="2.5s" repeatCount="indefinite" path="M 60 190 L 135 130" />
+      </circle>
 
-    <!-- Diagnostics Bars (Animated) -->
-    <!-- CPU Bar -->
-    <text x="15" y="130" font-family="'Fira Code', monospace" font-size="9" fill="#ffffff">CPU LOAD: 74%</text>
-    <rect x="15" y="138" width="265" height="8" fill="#162230" rx="3" />
-    <rect x="15" y="138" height="8" fill="#00f2fe" rx="3" filter="url(#glow-cyan)">
-      <animate attributeName="width" values="40;220;160;196;120;196" dur="8s" repeatCount="indefinite" />
+      <!-- Network Nodes (Circles) -->
+      <circle cx="40" cy="70" r="7" fill="#39ff14" filter="url(#glow-green)"/>
+      <text x="30" y="55" font-family="'Fira Code', monospace" font-size="9" fill="#39ff14" font-weight="bold">NODE_ALPHA</text>
+
+      <circle cx="135" cy="130" r="10" fill="#00f2fe" filter="url(#glow-cyan)" style="animation: pulse 2s infinite;"/>
+      <circle cx="135" cy="130" r="16" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="2 4">
+         <animateTransform attributeName="transform" type="rotate" values="0 135 130; 360 135 130" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <text x="95" y="155" font-family="'Fira Code', monospace" font-size="10" fill="#00f2fe" font-weight="bold">CORE_ROUTER</text>
+
+      <circle cx="220" cy="50" r="6" fill="#ef4444" filter="url(#glow-red)" style="animation: blink 0.5s infinite alternate;"/>
+      <text x="195" y="35" font-family="'Fira Code', monospace" font-size="9" fill="#ef4444" font-weight="bold">THREAT_01</text>
+
+      <circle cx="230" cy="180" r="7" fill="#eab308" filter="url(#glow-green)"/>
+      <text x="190" y="198" font-family="'Fira Code', monospace" font-size="9" fill="#eab308" font-weight="bold">PROXY_RELAY</text>
+
+      <circle cx="60" cy="190" r="6" fill="#a855f7" filter="url(#glow-cyan)"/>
+      <text x="30" y="210" font-family="'Fira Code', monospace" font-size="9" fill="#a855f7" font-weight="bold">DATACENTER</text>
+    </g>
+
+    <!-- Metrics at bottom -->
+    <rect x="20" y="235" width="230" height="6" fill="#0f172a" rx="3"/>
+    <rect x="20" y="235" width="180" height="6" fill="#39ff14" rx="3" filter="url(#glow-green)">
+       <animate attributeName="width" values="120; 190; 150; 210; 180" dur="5s" repeatCount="indefinite" />
     </rect>
-
-    <!-- RAM Bar -->
-    <text x="15" y="165" font-family="'Fira Code', monospace" font-size="9" fill="#ffffff">RAM ALLOC: 58%</text>
-    <rect x="15" y="173" width="265" height="8" fill="#162230" rx="3" />
-    <rect x="15" y="173" height="8" fill="#9b5de5" rx="3">
-      <animate attributeName="width" values="100;153;120;153;140;153" dur="10s" repeatCount="indefinite" />
-    </rect>
-
-    <!-- Security Core Bar -->
-    <text x="15" y="200" font-family="'Fira Code', monospace" font-size="9" fill="#ffffff">THREAT ALERT LEVEL: MINIMAL</text>
-    <rect x="15" y="208" width="265" height="8" fill="#162230" rx="3" />
-    <rect x="15" y="208" height="8" fill="#39ff14" rx="3" filter="url(#glow-green)">
-      <animate attributeName="width" values="25;40;30;45;20;25" dur="6s" repeatCount="indefinite" />
-    </rect>
-
-    <!-- Status labels -->
-    <text x="15" y="235" font-family="'Fira Code', monospace" font-size="10" fill="#39ff14" font-weight="700">SIEM CORE: ACTIVE</text>
-    <text x="160" y="235" font-family="'Fira Code', monospace" font-size="10" fill="#00f2fe" font-weight="700">TUNNEL: ENCRYPTED</text>
+    <text x="20" y="228" font-family="'Fira Code', monospace" font-size="9" fill="#94a3b8" font-weight="bold">NETWORK SECURE LOAD</text>
+    <text x="230" y="228" font-family="'Fira Code', monospace" font-size="9" fill="#39ff14" font-weight="bold">78%</text>
   </g>
 </svg>

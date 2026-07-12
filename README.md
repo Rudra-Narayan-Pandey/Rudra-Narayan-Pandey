@@ -1,28 +1,22 @@
 <p align="center">
-  <img src="./cyber_banner.svg?v=6" width="100%" alt="Rudra's Cyber Terminal HUD" />
+  <img src="./cyber_banner.svg?v=7" width="100%" alt="Rudra's Cyber Terminal HUD" />
 </p>
 
 <p align="center">
   <a href="https://linkedin.com/in/rudra-narayan-pandey-17a09128b" target="_blank">
-    <img src="https://img.shields.io/badge/TERMINAL-LINKEDIN-39ff14?style=for-the-badge&logo=linkedin&logoColor=black" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LINKEDIN-020617?style=for-the-badge&logo=linkedin&logoColor=39ff14&labelColor=020617&color=00f2fe" alt="LinkedIn" />
   </a>
   <a href="mailto:vismadebb@gmail.com">
-    <img src="https://img.shields.io/badge/CONSOLE-EMAIL-00F2FE?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
+    <img src="https://img.shields.io/badge/EMAIL-020617?style=for-the-badge&logo=gmail&logoColor=39ff14&labelColor=020617&color=00f2fe" alt="Email" />
   </a>
   <a href="https://github.com/Rudra-Narayan-Pandey">
-    <img src="https://img.shields.io/badge/SHELL-GITHUB-ffffff?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GITHUB-020617?style=for-the-badge&logo=github&logoColor=39ff14&labelColor=020617&color=00f2fe" alt="GitHub" />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=Rudra-Narayan-Pandey.Rudra-Narayan-Pandey-Hacker&color=green" alt="Profile Views" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Rudra-Narayan-Pandey.Rudra-Narayan-Pandey-Hacker&color=00f2fe" alt="Profile Views" />
 </p>
-
-```diff
-+ ====================================================================
-+  [+] SEC-DECK MODULE MOUNTED // IDENTITY VERIFIED: RUDRA N. PANDEY
-+ ====================================================================
-```
 
 ```text
 ██████╗ ██╗   ██╗██████╗ ██████╗  █████╗      ██████╗ ██████╗ ███████╗
@@ -36,7 +30,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td width="280" align="center" valign="middle" style="border: none; background: transparent;">
-      <img src="./cyber_face.png" width="260" alt="Cyber Operative Biometric Scan" style="border-radius: 12px; border: 2px solid #39ff14; box-shadow: 0 0 15px rgba(57,255,20,0.4);" />
+      <img src="./cyber_face.png" width="260" alt="Cyber Operative Biometric Scan" style="border-radius: 12px; border: 2px solid #00f2fe; box-shadow: 0 0 20px rgba(0,242,254,0.4);" />
     </td>
     <td valign="top" style="border: none; background: transparent; padding-left: 20px;">
       <pre lang="ini">
@@ -45,7 +39,7 @@
 [+] CLEARANCE     : ROOT_ACCESS_LEVEL_4
 [+] CORE FOCUS    : CYBER_SECURITY | VAPT | DEVSECOPS
 [+] ACADEMIC NODE : VIT VELLORE // B.TECH CSE
-[+] STATUS        : ACTIVE & SECURED
+[+] STATUS        : ACTIVE & ENCRYPTED
       </pre>
       <pre lang="diff">
 + [STATUS] BIOMETRIC FACE RECOGNITION LOCK CONFIRMED
@@ -58,169 +52,135 @@
 
 ---
 
-### ┌── [0x01] 🌌 SYSTEM MISSION DIRECTIVE ─────────────────────────────────┐
+### 📂 <kbd>root/classified_data/</kbd>
 
-```
-I am a Cybersecurity Engineer and Infrastructure Developer specializing in VAPT, Cloud Security Architecture, and SIEM/SOC automation. Currently based at VIT Vellore, my operational focus lies in identifying, logging, and mitigating threats across complex software ecosystems.
+<details open>
+  <summary><b><kbd>./view_mission_directive.sh</kbd></b></summary>
+  <br>
+  <blockquote style="border-left: 4px solid #00f2fe; padding-left: 15px; color: #c9d1d9;">
+    I am a Cybersecurity Engineer and Infrastructure Developer specializing in VAPT, Cloud Security Architecture, and SIEM/SOC automation. Based at VIT Vellore, my operational focus lies in identifying, logging, and mitigating threats across complex software ecosystems.<br><br>
+    I design defensive testbeds, deploy security configuration benchmarks, and develop tools to harden multi-agent cloud systems against adversarial bypasses, proxy manipulations, and traffic injections.
+  </blockquote>
+</details>
 
-I design defensive testbeds, deploy security configuration benchmarks, and develop tools to harden multi-agent cloud systems against adversarial bypasses, proxy manipulations, and traffic injections.
-```
+<details>
+  <summary><b><kbd>./list_active_nodes.sh --filter=projects</kbd></b></summary>
+  <br>
+  <table width="100%">
+    <tr>
+      <td width="50%" valign="top">
+        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/saie-ecosystem" style="color: #39ff14;">node://saie-ecosystem</a></h4>
+        <p><i>Self-Healing AI Ecosystem Simulator</i></p>
+        <code>Status: SECURE | Health: 100%</code><br>
+        <small>Evaluates AI resilience against deepfake injections, malicious misinformation cascades, and adversarial payloads.</small>
+      </td>
+      <td width="50%" valign="top">
+        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/ARAA" style="color: #39ff14;">node://ARAA</a></h4>
+        <p><i>Adversarial Reality Alignment Arena</i></p>
+        <code>Status: AUDITING | Health: 98%</code><br>
+        <small>Benchmark suite built for testing, auditing, and hardening LLM agents under deceptive environments.</small>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" valign="top">
+        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/Gods-eye-x" style="color: #39ff14;">node://Gods-eye-x</a></h4>
+        <p><i>Reality Alignment & Intelligence Dashboard</i></p>
+        <code>Status: STREAMING | Health: 100%</code><br>
+        <small>Visualization platform tracking agentic operations, divergence metrics, and ecosystem health.</small>
+      </td>
+      <td width="50%" valign="top">
+        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/sudarshana" style="color: #39ff14;">node://sudarshana</a></h4>
+        <p><i>Intrusion Detection System</i></p>
+        <code>Status: ACTIVE_LOG | Health: 99%</code><br>
+        <small>Lightweight network packet analyzer executing rule-based heuristics to generate real-time alerts.</small>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" valign="top">
+        <h4>🟢 <a href="https://github.com/Rudra-Narayan-Pandey/DORA-Dashboard" style="color: #39ff14;">node://DORA-Dashboard</a></h4>
+        <p><i>DevOps Metrics Engine</i></p>
+        <code>Status: CALCULATING | Health: 100%</code><br>
+        <small>Calculates and visualizes deployment frequencies, lead time for changes, and failure rates.</small>
+      </td>
+      <td width="50%"></td>
+    </tr>
+  </table>
+</details>
 
----
+<details>
+  <summary><b><kbd>cat /etc/security/credentials.conf</kbd></b></summary>
+  <br>
+  ```diff
+  ======================================================================
+  + [LIC-AZ400] MICROSOFT CERTIFIED: DEVOPS ENGINEER EXPERT
+  + [LIC-AZ500] MICROSOFT CERTIFIED: AZURE CYBER SECURITY FUNDAMENTALS
+  ======================================================================
+  ```
+</details>
 
-### ┌── [0x02] 🎖️ CREDENTIALS & DECRYPTED VERIFICATIONS ──────────────────────┐
+<details>
+  <summary><b><kbd>journalctl -u employment-records.service</kbd></b></summary>
+  <br>
+  
+  #### 🔴 **REDYNOX // Cybersecurity Analyst Intern**
+  *Oct 2025 – Nov 2025*
+  *   **Packet Diagnostics:** Monitored network streams using **Wireshark** to diagnose packet anomalies.
+  *   **Vulnerability Scan:** Conducted automated tests on target software using **OWASP ZAP** to generate threat alerts.
 
-```diff
-======================================================================
-+ [LIC-AZ400] MICROSOFT CERTIFIED: DEVOPS ENGINEER EXPERT
-+ [LIC-AZ500] MICROSOFT CERTIFIED: AZURE CYBER SECURITY FUNDAMENTALS
-======================================================================
-```
+  #### 🔵 **SECUERIUM TECHNOLOGIES // Security Engineer Intern**
+  *Aug 2025 – Sept 2025*
+  *   **Audit Vectors:** Conducted VAPT operations across sandboxed test targets.
+  *   **Reconnaissance:** Ran reconnaissance scans utilizing **Nmap**, **Metasploit**, **Nikto**, and **Enum4linux** to isolate and exploit flaws.
 
----
+  #### 🟡 **WAYSPIRE // Cloud Security Associate Intern**
+  *Apr 2024 – Jun 2024*
+  *   **Access Audit:** Audited **Azure IAM** policies, Role-Based Access Controls (RBAC), and security baselines.
+  *   **SIEM Monitoring:** Managed cloud environments using **Microsoft Defender for Cloud** and **Azure Security Center**.
+</details>
 
-### ┌── [0x03] 📂 RUNNING SYSTEM INVENTORY (ACTIVE NODES) ──────────────────┐
-
-#### 🟢 **node://saie-ecosystem**
-> **Designation:** Self-Healing AI Ecosystem Simulator
-> ```bash
-> $ ./check_node_status.sh --node saie-ecosystem
-> [+] Status: ONLINE | Health: 100% | Mode: SIMULATE_ADVERSARIAL_PAYLOAD
-> ```
-> *   Built to analyze AI alignment under threat vectors (deepfake injections, packet leaks, and malicious misinformation cascades).
-> *   Implements self-healing algorithms that automatically recover system alignment during live attacks.
-
-#### 🟢 **node://ARAA**
-> **Designation:** Adversarial Reality Alignment Arena
-> ```bash
-> $ ./check_node_status.sh --node ARAA
-> [+] Status: ONLINE | Health: 98% | Mode: LLM_DECEPTION_AUDIT
-> ```
-> *   An open-environment benchmark suite built for testing, auditing, and hardening LLM agents under deceptive scenarios and proxy-manipulation vectors.
-
-#### 🟢 **node://Gods-eye-x**
-> **Designation:** Reality Alignment & Intelligence Dashboard
-> ```bash
-> $ ./check_node_status.sh --node Gods-eye-x
-> [+] Status: ONLINE | Health: 100% | Mode: REAL_TIME_STREAM
-> ```
-> *   A centralized monitoring and visualization platform tracking agentic operations, divergence metrics, and network health in adversarial simulations.
-
-#### 🟢 **node://sudarshana**
-> **Designation:** Intrusion Detection & Security Monitoring System
-> ```bash
-> $ ./check_node_status.sh --node sudarshana
-> [+] Status: ONLINE | Health: 99% | Mode: IDS_ACTIVE_LOG
-> ```
-> *   Lightweight network packet analyzer executing rule-based heuristics to generate real-time alerts for common scan attacks (Nmap/ARP poisoning).
-
-#### 🟢 **node://DORA-Dashboard**
-> **Designation:** DORA DevOps Metrics Engine
-> ```bash
-> $ ./check_node_status.sh --node DORA-Dashboard
-> [+] Status: ONLINE | Health: 100% | Mode: CALC_DORA_FREQUENCY
-> ```
-> *   Calculates and visualizes deployment frequencies, lead time for changes, change failure rates, and mean time to restore.
-
----
-
-### ┌── [0x04] 🧠 CYBER ARSENAL & MEMORY MODULES ────────────────────────────┐
-
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,java,cpp,bash,git,github,vscode,docker,nginx,postgres,mysql,aws,azure,kali,linux,windows&perline=8" alt="My Skills" />
-  </a>
-</p>
-
-```yaml
-LOADED_BINARIES:
-  programming_languages:
-    - Python
-    - Java
-    - C
-    - C++
-  security_scanners:
-    - Wireshark
-    - Nmap
-    - Metasploit
-    - Burp Suite
-    - OWASP ZAP
-    - Nikto
-    - Enum4linux
-    - Kali Linux Suite
-  cloud_architectures:
-    - Azure Security Center
-    - Microsoft Defender for Cloud
-    - Azure IAM
-    - Microsoft Sentinel SIEM
-    - AWS (EC2, S3, IAM)
-  operating_systems:
-    - Linux Kernel (Debian/Ubuntu/Kali)
-    - Windows Enterprise OS
-  network_protocols:
-    - TCP/IP Stack
-    - DNS Sec
-    - HTTP/HTTPS SSL TLS
-```
-
----
-
-### ┌── [0x05] 📜 SYSTEM ACCESS AUDIT LOGS (EXPERIENCE) ─────────────────────┐
-
-```bash
-root@security-core:~$ journalctl -u employment-records.service --no-pager
-```
-
-#### 🔴 **REDYNOX // Cybersecurity Analyst Intern**
-*Timestamp: Oct 2025 – Nov 2025*
-*   **Packet Diagnostics:** Monitored network streams using **Wireshark** to diagnose packet anomalies.
-*   **Vulnerability Scan:** Conducted automated tests on target software using **OWASP ZAP** to generate threat alerts.
-
-#### 🔵 **SECUERIUM TECHNOLOGIES // Security Engineer Intern**
-*Timestamp: Aug 2025 – Sept 2025*
-*   **Audit Vectors:** Conducted VAPT operations across sandboxed test targets.
-*   **Reconnaissance:** Ran reconnaissance scans utilizing **Nmap**, **Metasploit**, **Nikto**, and **Enum4linux** to isolate and exploit security flaws.
-
-#### 🟡 **WAYSPIRE // Cloud Security Associate Intern**
-*Timestamp: Apr 2024 – Jun 2024*
-*   **Access Audit:** Audited **Azure IAM** policies, Role-Based Access Controls (RBAC), and security baselines.
-*   **SIEM Monitoring:** Managed cloud environments using **Microsoft Defender for Cloud** and **Azure Security Center**.
-
----
-
-### ┌── [0x06] 🏆 ACHIEVEMENT DATABASE DUMP ────────────────────────────────┐
-
-```json
-{
-  "grand_finale_hackathon_finalist": {
-    "competition": "Meta PyTorch OpenEnv Hackathon x Scaler School of Technology",
-    "year": 2026,
-    "bracket": "Top 1% (Selected from 52,000+ registered global developers)",
-    "location": "Bangalore Grand Finale",
-    "opportunities": ["Meta AI teams", "Hugging Face AI teams"]
-  },
-  "build_a_thon_completion": {
-    "event": "Anakin Build-a-thon",
-    "status": "Graduate / Verified Certificate of Completion"
+<details>
+  <summary><b><kbd>cat /var/db/achievements.json</kbd></b></summary>
+  <br>
+  ```json
+  {
+    "grand_finale_hackathon_finalist": {
+      "competition": "Meta PyTorch OpenEnv Hackathon x Scaler School of Technology",
+      "year": 2026,
+      "bracket": "Top 1% (Selected from 52,000+ registered global developers)",
+      "location": "Bangalore Grand Finale"
+    },
+    "build_a_thon_completion": {
+      "event": "Anakin Build-a-thon",
+      "status": "Graduate / Verified Certificate of Completion"
+    }
   }
-}
-```
+  ```
+</details>
+
+<details>
+  <summary><b><kbd>ps -ef | grep loaded_skills</kbd></b></summary>
+  <br>
+  <p align="center">
+    <a href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=py,java,cpp,bash,git,github,vscode,docker,nginx,postgres,mysql,aws,azure,kali,linux,windows&perline=8&theme=dark" alt="My Skills" />
+    </a>
+  </p>
+</details>
+
+<details>
+  <summary><b><kbd>curl -X GET api/v1/metrics/github_stats</kbd></b></summary>
+  <br>
+  <p align="center">
+    <img src="https://github-readme-stats.vercel.app/api?username=Rudra-Narayan-Pandey&show_icons=true&theme=tokyonight&locale=en&border_color=39ff14&bg_color=020617" alt="Rudra's GitHub Stats" width="48.5%" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rudra-Narayan-Pandey&layout=compact&theme=tokyonight&border_color=00f2fe&bg_color=020617" alt="Rudra's Top Languages" width="48.5%" />
+  </p>
+  <p align="center">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rudra-Narayan-Pandey&theme=tokyonight&border=39ff14&background=020617" alt="Rudra's GitHub Streak" width="98%" />
+  </p>
+</details>
 
 ---
 
-### ┌── [0x07] 📈 METRICS ENGINE & ACTIVITY FREQUENCY ───────────────────────┐
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Rudra-Narayan-Pandey&show_icons=true&theme=tokyonight&locale=en" alt="Rudra's GitHub Stats" width="48.5%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rudra-Narayan-Pandey&layout=compact&theme=tokyonight" alt="Rudra's Top Languages" width="48.5%" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Rudra-Narayan-Pandey&theme=tokyonight" alt="Rudra's GitHub Streak" width="98%" />
-</p>
-
----
-
-<p align="center">
-  ☣️ <b>SYSTEM ACCESS COMPLETE. ROOT TERMINAL CLOSED.</b>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00f2fe&height=120&section=footer&text=EOF&fontSize=40&fontAlignY=70&descAlignY=85&descAlign=50" width="100%" />
 </p>

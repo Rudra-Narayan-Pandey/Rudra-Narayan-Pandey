@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./cyber_banner.svg" width="100%" alt="Rudra's Cyber AI Banner" />
+  <img src="./cyber_banner.svg?v=3" width="100%" alt="Rudra's Cyber AI Banner" />
 </p>
 
 <p align="center">

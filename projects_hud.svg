@@ -1,26 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="600">
   <defs>
-    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-    <filter id="glow-white" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
     
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#020617" />
+      <stop offset="0%" stop-color="#020c1b" />
       <stop offset="100%" stop-color="#0a192f" />
     </linearGradient>
     
-    <!-- Curved Web Lines -->
-    <path id="web1" d="M 500 300 Q 375 225 250 150" fill="none"/>
-    <path id="web2" d="M 500 300 Q 375 375 250 450" fill="none"/>
-    <path id="web3" d="M 500 300 Q 625 225 750 150" fill="none"/>
-    <path id="web4" d="M 500 300 Q 625 375 750 450" fill="none"/>
-    <path id="web5" d="M 500 300 L 500 100" fill="none"/>
+    <!-- Clean Geometric Lines -->
+    <path id="conn1" d="M 500 300 L 250 150" fill="none"/>
+    <path id="conn2" d="M 500 300 L 250 450" fill="none"/>
+    <path id="conn3" d="M 500 300 L 750 150" fill="none"/>
+    <path id="conn4" d="M 500 300 L 750 450" fill="none"/>
+    <path id="conn5" d="M 500 300 L 500 100" fill="none"/>
     
-    <!-- Background Web Pattern -->
-    <pattern id="spider-web" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-      <path d="M 0 0 L 200 200 M 200 0 L 0 200 M 100 0 L 100 200 M 0 100 L 200 100" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="100" cy="100" r="80" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="100" cy="100" r="40" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
+    <!-- Hexagon Grid Pattern -->
+    <pattern id="hex-grid" x="0" y="0" width="40" height="69.282" patternUnits="userSpaceOnUse">
+      <path d="M 40 17.32 L 20 5.77 L 0 17.32 L 0 40.41 L 20 51.96 L 40 40.41 Z M 0 51.96 L -20 40.41 M 20 75.05 L 20 51.96 M 40 51.96 L 60 40.41" stroke="#00f2fe" stroke-width="0.5" opacity="0.05" fill="none"/>
     </pattern>
   </defs>
 
@@ -29,75 +26,59 @@
     @keyframes spin { 100% { transform: rotate(360deg); } }
     @keyframes sweep { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
     
-    .spin-slow { animation: spin 10s linear infinite; transform-origin: center; }
-    .pulse-core { animation: pulse 2s ease-in-out infinite; transform-origin: center; }
+    .spin-slow { animation: spin 15s linear infinite; transform-origin: center; }
+    .pulse-core { animation: pulse 3s ease-in-out infinite; transform-origin: center; }
     
     /* Text Styles */
-    .node-title { font-family: 'Fira Code', monospace; font-size: 18px; font-weight: bold; fill: #ef4444; }
-    .node-desc { font-family: 'Outfit', sans-serif; font-size: 14px; fill: #e2e8f0; }
-    .node-health { font-family: 'Fira Code', monospace; font-size: 12px; fill: #3b82f6; }
+    .node-title { font-family: 'Fira Code', monospace; font-size: 18px; font-weight: bold; fill: #00f2fe; }
+    .node-desc { font-family: 'Outfit', sans-serif; font-size: 14px; fill: #cbd5e1; }
+    .node-health { font-family: 'Fira Code', monospace; font-size: 12px; fill: #eab308; }
     
-    .web-draw { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: sweep 3s forwards; }
+    .line-draw { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: sweep 3s forwards; }
   </style>
 
-  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="12" stroke="#ef4444" stroke-width="2"/>
-  <rect width="100%" height="100%" fill="url(#spider-web)" rx="12"/>
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="12" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect width="100%" height="100%" fill="url(#hex-grid)" rx="12"/>
   
-  <text x="30" y="40" font-family="'Fira Code', monospace" font-size="22" fill="#ef4444" font-weight="900" letter-spacing="2" filter="url(#glow-red)">PROJECT.NODES // SPIDER_NET</text>
+  <text x="30" y="40" font-family="'Fira Code', monospace" font-size="20" fill="#00f2fe" font-weight="900" letter-spacing="2" filter="url(#glow-cyan)">PROJECT.NODES // STARK_NET</text>
 
-  <!-- Web Connections -->
-  <g stroke="#ffffff" stroke-width="2" class="web-draw" fill="none" stroke-dasharray="8 4" opacity="0.5" filter="url(#glow-white)">
-    <use href="#web1"/> <use href="#web2"/> <use href="#web3"/> <use href="#web4"/> <use href="#web5"/>
+  <!-- Clean Data Connections -->
+  <g stroke="#00f2fe" stroke-width="2" class="line-draw" fill="none" opacity="0.6">
+    <use href="#conn1"/> <use href="#conn2"/> <use href="#conn3"/> <use href="#conn4"/> <use href="#conn5"/>
   </g>
 
-  <!-- Moving Web Packets -->
+  <!-- Moving Data Packets -->
   <g>
-    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#web1"/></animateMotion></circle>
-    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#web2"/></animateMotion></circle>
-    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#web3"/></animateMotion></circle>
-    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#web4"/></animateMotion></circle>
-    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#web5"/></animateMotion></circle>
+    <circle r="4" fill="#eab308" filter="url(#glow-gold)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#conn1"/></animateMotion></circle>
+    <circle r="4" fill="#00f2fe" filter="url(#glow-cyan)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#conn2"/></animateMotion></circle>
+    <circle r="4" fill="#eab308" filter="url(#glow-gold)"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#conn3"/></animateMotion></circle>
+    <circle r="4" fill="#00f2fe" filter="url(#glow-cyan)"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#conn4"/></animateMotion></circle>
+    <circle r="4" fill="#eab308" filter="url(#glow-gold)"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#conn5"/></animateMotion></circle>
   </g>
 
-  <!-- Central Core (Real Spider Emblem) -->
+  <!-- Central Core (Stark Arc Reactor Style) -->
   <g transform="translate(500, 300)" class="pulse-core">
     <!-- Glowing Aura -->
-    <circle cx="0" cy="0" r="70" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="2" filter="url(#glow-red)"/>
-    <circle cx="0" cy="0" r="55" fill="#0f172a" stroke="#3b82f6" stroke-width="3" filter="url(#glow-blue)"/>
+    <circle cx="0" cy="0" r="70" fill="rgba(0, 242, 254, 0.05)" stroke="#00f2fe" stroke-width="2" filter="url(#glow-cyan)"/>
+    <circle cx="0" cy="0" r="55" fill="#020c1b" stroke="#eab308" stroke-width="3" filter="url(#glow-gold)" class="spin-slow" stroke-dasharray="10 20"/>
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#00f2fe" stroke-width="4" stroke-dasharray="30 10 5 10"/>
     
-    <!-- Classic Spider Logo -->
-    <g fill="#ef4444">
-      <!-- Abdomen and Head -->
-      <path d="M -15 -10 C -15 -30, 15 -30, 15 -10 C 15 10, 10 30, 0 35 C -10 30, -15 10, -15 -10 Z" />
-      <circle cx="0" cy="-20" r="8" />
-      <!-- Legs Top Left -->
-      <path d="M -8 -15 L -25 -35 L -45 -30 L -40 -25 L -20 -28 L -5 -10 Z" />
-      <path d="M -10 -5 L -35 -15 L -55 0 L -50 5 L -30 -10 L -5 0 Z" />
-      <!-- Legs Bottom Left -->
-      <path d="M -10 10 L -30 25 L -40 50 L -35 55 L -25 35 L -5 15 Z" />
-      <path d="M -5 20 L -20 45 L -20 70 L -15 70 L -15 50 L 0 25 Z" />
-      <!-- Legs Top Right -->
-      <path d="M 8 -15 L 25 -35 L 45 -30 L 40 -25 L 20 -28 L 5 -10 Z" />
-      <path d="M 10 -5 L 35 -15 L 55 0 L 50 5 L 30 -10 L 5 0 Z" />
-      <!-- Legs Bottom Right -->
-      <path d="M 10 10 L 30 25 L 40 50 L 35 55 L 25 35 L 5 15 Z" />
-      <path d="M 5 20 L 20 45 L 20 70 L 15 70 L 15 50 L 0 25 Z" />
-    </g>
+    <text x="0" y="0" font-family="'Outfit', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" filter="url(#glow-cyan)">STARK</text>
+    <text x="0" y="15" font-family="'Fira Code', monospace" font-size="10" font-weight="400" fill="#eab308" text-anchor="middle">HUB</text>
   </g>
 
   <!-- Helper for consistent nodes -->
   <defs>
     <g id="project-node">
-      <circle cx="0" cy="0" r="35" fill="#0f172a" stroke="#3b82f6" stroke-width="3" filter="url(#glow-blue)"/>
-      <circle cx="0" cy="0" r="45" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="15 15" class="spin-slow" filter="url(#glow-red)"/>
+      <circle cx="0" cy="0" r="35" fill="#020c1b" stroke="#00f2fe" stroke-width="2" filter="url(#glow-cyan)"/>
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#eab308" stroke-width="1.5" stroke-dasharray="10 20" class="spin-slow"/>
     </g>
   </defs>
 
   <!-- Project 1: saie-ecosystem (Top Left) -->
   <g transform="translate(250, 150)">
     <use href="#project-node"/>
-    <!-- TEXT IS BELOW THE CIRCLE TO PREVENT CLIPPING -->
-    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">saie-ecosystem</text>
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-cyan)">saie-ecosystem</text>
     <text x="0" y="85" class="node-desc" text-anchor="middle">Self-Healing AI Simulator</text>
     <text x="0" y="105" class="node-health" text-anchor="middle">Health: 100% [NOMINAL]</text>
   </g>
@@ -105,8 +86,7 @@
   <!-- Project 2: ARAA (Bottom Left) -->
   <g transform="translate(250, 410)">
     <use href="#project-node"/>
-    <!-- Text below -->
-    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">ARAA</text>
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-cyan)">ARAA</text>
     <text x="0" y="85" class="node-desc" text-anchor="middle">Adversarial Reality Alignment</text>
     <text x="0" y="105" class="node-health" text-anchor="middle">Health: 98% [AUDITING]</text>
   </g>
@@ -114,8 +94,7 @@
   <!-- Project 3: Gods-eye-x (Top Right) -->
   <g transform="translate(750, 150)">
     <use href="#project-node"/>
-    <!-- Text below -->
-    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">Gods-eye-x</text>
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-cyan)">Gods-eye-x</text>
     <text x="0" y="85" class="node-desc" text-anchor="middle">Intelligence Dashboard</text>
     <text x="0" y="105" class="node-health" text-anchor="middle">Health: 100% [STREAMING]</text>
   </g>
@@ -123,8 +102,7 @@
   <!-- Project 4: sudarshana (Bottom Right) -->
   <g transform="translate(750, 410)">
     <use href="#project-node"/>
-    <!-- Text below -->
-    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">sudarshana</text>
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-cyan)">sudarshana</text>
     <text x="0" y="85" class="node-desc" text-anchor="middle">Intrusion Detection System</text>
     <text x="0" y="105" class="node-health" text-anchor="middle">Health: 99% [ACTIVE_LOG]</text>
   </g>
@@ -132,8 +110,7 @@
   <!-- Project 5: DORA-Dashboard (Top Center) -->
   <g transform="translate(500, 100)">
     <use href="#project-node"/>
-    <!-- Text to the right (plenty of room) -->
-    <text x="60" y="0" class="node-title" text-anchor="start" filter="url(#glow-red)">DORA-Dashboard</text>
+    <text x="60" y="0" class="node-title" text-anchor="start" filter="url(#glow-cyan)">DORA-Dashboard</text>
     <text x="60" y="20" class="node-desc" text-anchor="start">DevOps Metrics Engine</text>
     <text x="60" y="40" class="node-health" text-anchor="start">Health: 100% [CALCULATING]</text>
   </g>

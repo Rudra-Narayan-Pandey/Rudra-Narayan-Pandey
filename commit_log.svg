@@ -1,49 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="250">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 280" width="100%" height="280">
   <defs>
-    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-    <linearGradient id="fade-mask" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="transparent" />
-      <stop offset="15%" stop-color="white" />
-      <stop offset="85%" stop-color="white" />
-      <stop offset="100%" stop-color="transparent" />
-    </linearGradient>
-    <mask id="fade">
-      <rect width="100%" height="100%" fill="url(#fade-mask)" />
-    </mask>
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    
+    <clipPath id="show1"><rect x="0" y="0" width="850" height="0"><animate attributeName="height" values="0; 25" dur="1s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show2"><rect x="0" y="25" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.5; 1" dur="2s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show3"><rect x="0" y="50" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.6; 1" dur="3s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show4"><rect x="0" y="75" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.7; 1" dur="4s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show5"><rect x="0" y="100" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.75; 1" dur="5s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show6"><rect x="0" y="125" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.8; 1" dur="6s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show7"><rect x="0" y="150" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.85; 1" dur="7s" fill="freeze" /></rect></clipPath>
+    <clipPath id="show8"><rect x="0" y="175" width="850" height="0"><animate attributeName="height" values="0; 0; 25" keyTimes="0; 0.9; 1" dur="8s" fill="freeze" /></rect></clipPath>
   </defs>
 
   <style>
-    @keyframes scroll {
-      0% { transform: translateY(250px); }
-      100% { transform: translateY(-300px); }
-    }
-    .scroller { animation: scroll 15s linear infinite; }
-    .commit-text { font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 600; }
-    .hash { fill: #3b82f6; }
-    .branch { fill: #ef4444; }
-    .msg { fill: #e2e8f0; }
+    .commit-text { font-family: 'Fira Code', Consolas, monospace; font-size: 13.5px; font-weight: 500; }
+    .hash { fill: #eab308; font-weight: bold; }
+    .branch { fill: #00f2fe; }
+    .msg { fill: #cbd5e1; }
   </style>
 
-  <!-- Deep Blue Background with Red Border -->
-  <rect width="100%" height="100%" fill="rgba(10, 25, 47, 0.8)" rx="10" stroke="#ef4444" stroke-width="2"/>
+  <!-- Deep Blue Stark Background -->
+  <rect width="100%" height="100%" fill="rgba(2, 12, 27, 0.9)" rx="8" stroke="#00f2fe" stroke-width="1.5" stroke-opacity="0.6"/>
   
-  <text x="20" y="30" font-family="'Fira Code', monospace" font-size="14" fill="#ef4444" font-weight="900" letter-spacing="1" filter="url(#glow-red)">peter@spider-os:~/web_net$ tail -f /var/log/spider_sense.log</text>
-  <line x1="20" y1="40" x2="780" y2="40" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
+  <text x="25" y="30" font-family="'Fira Code', monospace" font-size="14" fill="#00f2fe" font-weight="700" letter-spacing="1" filter="url(#glow-cyan)">root@jarvis:~/stark_net$ tail -n 8 /var/log/sys_security.log</text>
+  <line x1="25" y1="40" x2="825" y2="40" stroke="#00f2fe" stroke-width="1" opacity="0.4"/>
 
-  <!-- Scrolling Area -->
-  <g mask="url(#fade)">
-    <g class="scroller" transform="translate(20, 0)">
-      <text y="50" class="commit-text"><tspan class="hash">70401b6</tspan> <tspan class="branch">(HEAD -> spider_net)</tspan> <tspan class="msg">🕷️ [ROOT.ACCESS] SYSTEM ONLINE. SPIDER-SENSE PROTOCOL ACTIVATED.</tspan></text>
-      <text y="75" class="commit-text"><tspan class="hash">7e1a7da</tspan> <tspan class="msg">🕷️ [SYNC] CALIBRATING WEB-SHOOTER FLUID DYNAMICS</tspan></text>
-      <text y="100" class="commit-text"><tspan class="hash">b21c953</tspan> <tspan class="msg">🕷️ [SYS.DEFENSE] ARMING SYMBIOTE COUNTER-MEASURE PROTOCOLS</tspan></text>
-      <text y="125" class="commit-text"><tspan class="hash">bc80180</tspan> <tspan class="msg">🕷️ [UI.RENDER] INITIALIZING HOLOGRAPHIC KAREN INTERFACE</tspan></text>
-      <text y="150" class="commit-text"><tspan class="hash">d103085</tspan> <tspan class="msg">🕷️ [AUTH.FORGE] VERIFYING PARKER CREDENTIALS - ACCESS GRANTED</tspan></text>
-      <text y="175" class="commit-text"><tspan class="hash">2da98c3</tspan> <tspan class="msg">🕷️ [INJECT] UPLOADING WEB_TRAP_FIRMWARE.BIN TO MAINFRAME</tspan></text>
-      <text y="200" class="commit-text"><tspan class="hash">96e3194</tspan> <tspan class="msg">🕷️ [OVERRIDE] BYPASSING OSBORN FIREWALLS via QUANTUM TUNNEL</tspan></text>
-      <text y="225" class="commit-text"><tspan class="hash">b785e1d</tspan> <tspan class="msg">🕷️ [NETWORK.UPLINK] ESTABLISHING AVENGER RELAY CONNECTION</tspan></text>
-      <text y="250" class="commit-text"><tspan class="hash">c473cf5</tspan> <tspan class="msg">🕷️ [MODULE.LOAD] DECRYPTING MULTIVERSE SECTOR 7G</tspan></text>
-      <text y="275" class="commit-text"><tspan class="hash">31fc8ed</tspan> <tspan class="msg">🕷️ [SYS.INIT] BOOT SEQUENCE INITIATED... KAREN ONLINE</tspan></text>
-    </g>
+  <!-- Static/Revealing Commits for immediate readability -->
+  <g transform="translate(25, 55)" class="commit-text">
+    <g clip-path="url(#show1)"><text y="15"><tspan class="hash">f9c81a2</tspan> <tspan class="branch">(HEAD -> main)</tspan> <tspan class="msg">🛡️ [SEC-008] DEPLOYED ZERO-TRUST ARCHITECTURE ACROSS CLOUD NODES</tspan></text></g>
+    <g clip-path="url(#show2)"><text y="40"><tspan class="hash">e4b73f9</tspan> <tspan class="msg">🛡️ [SEC-007] MITIGATED ZERO-DAY VULNERABILITIES IN PROD K8S CLUSTER</tspan></text></g>
+    <g clip-path="url(#show3)"><text y="65"><tspan class="hash">c2a51e6</tspan> <tspan class="msg">🛡️ [SEC-006] AUTOMATED THREAT INTELLIGENCE FEED INTEGRATION (SIEM)</tspan></text></g>
+    <g clip-path="url(#show4)"><text y="90"><tspan class="hash">a1d90c5</tspan> <tspan class="msg">🛡️ [SEC-005] HARDENED MULTI-AGENT CLOUD SYSTEMS AGAINST BYPASSES</tspan></text></g>
+    <g clip-path="url(#show5)"><text y="115"><tspan class="hash">b8f42d1</tspan> <tspan class="msg">🛡️ [SEC-004] EXECUTED PENETRATION TESTING ON CRITICAL INFRASTRUCTURE</tspan></text></g>
+    <g clip-path="url(#show6)"><text y="140"><tspan class="hash">d6e19b4</tspan> <tspan class="msg">🛡️ [SEC-003] ENFORCED SECURITY CONFIGURATION BENCHMARKS (CIS)</tspan></text></g>
+    <g clip-path="url(#show7)"><text y="165"><tspan class="hash">8c3f5a7</tspan> <tspan class="msg">🛡️ [SEC-002] DEVELOPED CUSTOM DEVSECOPS PIPELINES VIA GITHUB ACTIONS</tspan></text></g>
+    <g clip-path="url(#show8)"><text y="190"><tspan class="hash">3a2b1c0</tspan> <tspan class="msg">🛡️ [SEC-001] INITIALIZED J.A.R.V.I.S SECURE BOOT SEQUENCE</tspan></text></g>
   </g>
 </svg>

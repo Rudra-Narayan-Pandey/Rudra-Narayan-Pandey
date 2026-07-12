@@ -142,14 +142,14 @@
     
     <!-- Line 2 -->
     <svg width="450" height="50" class="line2" style="overflow: hidden; position: absolute;">
-      <text x="0" y="35" class="typing-text" font-size="32" fill="#9b5de5">an AI Safety Researcher</text>
+      <text x="0" y="35" class="typing-text" font-size="32" fill="#9b5de5">a Cybersecurity Engineer</text>
       <!-- Blinking Cursor -->
       <line x1="410" y1="8" x2="410" y2="38" class="cursor" style="stroke: #9b5de5;" />
     </svg>
     
     <!-- Line 3 -->
     <svg width="450" height="50" class="line3" style="overflow: hidden; position: absolute;">
-      <text x="0" y="35" class="typing-text" font-size="32" fill="#00f2fe">a Multi-Agent Architect</text>
+      <text x="0" y="35" class="typing-text" font-size="32" fill="#00f2fe">a DevOps &amp; Cloud Expert</text>
       <!-- Blinking Cursor -->
       <line x1="410" y1="8" x2="410" y2="38" class="cursor" />
     </svg>

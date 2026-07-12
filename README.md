@@ -19,18 +19,18 @@
 </p>
 
 ```text
-██████╗ ██╗   ██╗██████╗ ██████╗  █████╗      ██████╗ ██████╗ ███████╗
-██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗    ██╔════╝██╔═══██╗██╔════╝
-██████╔╝██║   ██║██║  ██║██████╔╝███████║    ██║     ██║   ██║█████╗  
-██╔══██╗██║   ██║██║  ██║██╔══██╗██╔══██║    ██║     ██║   ██║██╔══╝  
-██║  ██║╚██████╔╝██████╔╝██║  ██║██║  ██║    ╚██████╗╚██████╔╝███████╗
-╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══════╝ ╚═════╝ ╚══════╝
+ ██████╗  ██████╗ ██████╗     ███╗   ███╗ ██████╗ ██████╗ ███████╗
+██╔════╝ ██╔═══██╗██╔══██╗    ████╗ ████║██╔═══██╗██╔══██╗██╔════╝
+██║  ███╗██║   ██║██║  ██║    ██╔████╔██║██║   ██║██║  ██║█████╗  
+██║   ██║██║   ██║██║  ██║    ██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  
+╚██████╔╝╚██████╔╝██████╔╝    ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗
+ ╚═════╝  ╚═════╝ ╚═════╝     ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
 ```
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td width="280" align="center" valign="middle" style="border: none; background: transparent;">
-      <img src="./cyber_face.png" width="260" alt="Cyber Operative Biometric Scan" style="border-radius: 12px; border: 2px solid #00f2fe; box-shadow: 0 0 20px rgba(0,242,254,0.4);" />
+      <img src="https://raw.githubusercontent.com/Rudra-Narayan-Pandey/Rudra-Narayan-Pandey/main/cyber_face.png?v=8" width="260" alt="Cyber Operative Biometric Scan" style="border-radius: 12px; border: 2px solid #00f2fe; box-shadow: 0 0 20px rgba(0,242,254,0.4);" />
     </td>
     <td valign="top" style="border: none; background: transparent; padding-left: 20px;">
       <pre lang="ini">
@@ -181,6 +181,8 @@
 
 ---
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=00f2fe&height=120&section=footer&text=EOF&fontSize=40&fontAlignY=70&descAlignY=85&descAlign=50" width="100%" />
-</p>
+```diff
+- [SYSTEM_HALT] SESSION TERMINATED
+- [CONNECTION] DISCONNECTED FROM NODE
++ [LOG] EOF
+```

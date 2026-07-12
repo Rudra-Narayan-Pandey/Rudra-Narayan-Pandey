@@ -46,15 +46,21 @@
 
 ---
 
-### ⚡ <kbd>stark_net/classified_data/</kbd>
+### ☢️ <kbd>gamma_lab/brute_force_data/</kbd>
 
 <details open>
-  <summary><b><kbd>./view_mission_directive.sh</kbd></b></summary>
+  <summary><b><kbd>./execute_gamma_protocol.sh --smash-vulnerabilities</kbd></b></summary>
   <br>
-  <blockquote style="border-left: 4px solid #00f2fe; padding-left: 15px; color: #c9d1d9;">
-    I am a Cybersecurity Engineer and Infrastructure Developer specializing in VAPT, Cloud Security Architecture, and SIEM/SOC automation. Based at VIT Vellore, my operational focus lies in identifying, logging, and mitigating threats across complex software ecosystems.<br><br>
-    I design defensive testbeds, deploy security configuration benchmarks, and develop tools to harden multi-agent cloud systems against adversarial bypasses, proxy manipulations, and traffic injections.
-  </blockquote>
+  ```diff
+  + [GAMMA LEVEL THREAT MITIGATOR]
+  + 
+  + I am an unstoppable Cybersecurity Engineer and Infrastructure Developer specializing in VAPT, Cloud Security Architecture, and SIEM/SOC automation. 
+  + Based at VIT Vellore, my operational focus is brute-forcing defenses, identifying weaknesses, and aggressively mitigating threats across complex software ecosystems.
+  + 
+  + I build impenetrable defensive testbeds, deploy heavy-duty security configuration benchmarks, and develop tools to harden multi-agent cloud systems against adversarial bypasses.
+  + 
+  + I don't just patch systems... I SMASH BUGS.
+  ```
 </details>
 
 <details open>

@@ -1,133 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="600">
   <defs>
-    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
-    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-white" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0a192f" />
-      <stop offset="100%" stop-color="#020c1b" />
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0a192f" />
     </linearGradient>
     
-    <!-- Mechanical Spider Arms -->
-    <path id="arm1" d="M 500 240 L 400 100 L 220 100" fill="none"/>
-    <path id="arm2" d="M 500 240 L 400 380 L 220 380" fill="none"/>
-    <path id="arm3" d="M 500 240 L 600 100 L 780 100" fill="none"/>
-    <path id="arm4" d="M 500 240 L 600 380 L 780 380" fill="none"/>
-    <path id="arm5" d="M 500 240 L 500 390" fill="none"/>
+    <!-- Curved Web Lines -->
+    <path id="web1" d="M 500 300 Q 375 225 250 150" fill="none"/>
+    <path id="web2" d="M 500 300 Q 375 375 250 450" fill="none"/>
+    <path id="web3" d="M 500 300 Q 625 225 750 150" fill="none"/>
+    <path id="web4" d="M 500 300 Q 625 375 750 450" fill="none"/>
+    <path id="web5" d="M 500 300 L 500 100" fill="none"/>
     
-    <!-- Web Pattern -->
-    <pattern id="web" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-      <path d="M 0 0 L 100 100 M 100 0 L 0 100" stroke="#ef4444" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="0.5" opacity="0.1"/>
-      <circle cx="50" cy="50" r="20" fill="none" stroke="#ef4444" stroke-width="0.5" opacity="0.1"/>
+    <!-- Background Web Pattern -->
+    <pattern id="spider-web" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <path d="M 0 0 L 200 200 M 200 0 L 0 200 M 100 0 L 100 200 M 0 100 L 200 100" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
+      <circle cx="100" cy="100" r="80" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
+      <circle cx="100" cy="100" r="40" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.1"/>
     </pattern>
   </defs>
 
   <style>
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } }
     @keyframes spin { 100% { transform: rotate(360deg); } }
-    @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
-    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
     @keyframes sweep { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
     
-    .spin-slow { animation: spin 12s linear infinite; transform-origin: center; }
-    .spin-fast { animation: spin-rev 6s linear infinite; transform-origin: center; }
-    .node-title { font-family: 'Fira Code', monospace; font-size: 16px; font-weight: bold; }
-    .node-desc { font-family: 'Outfit', sans-serif; font-size: 13px; fill: #cbd5e1; }
-    .node-health { font-family: 'Fira Code', monospace; font-size: 11px; }
+    .spin-slow { animation: spin 10s linear infinite; transform-origin: center; }
+    .pulse-core { animation: pulse 2s ease-in-out infinite; transform-origin: center; }
     
-    .arm-draw { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: sweep 3s forwards; }
+    /* Text Styles */
+    .node-title { font-family: 'Fira Code', monospace; font-size: 18px; font-weight: bold; fill: #ef4444; }
+    .node-desc { font-family: 'Outfit', sans-serif; font-size: 14px; fill: #e2e8f0; }
+    .node-health { font-family: 'Fira Code', monospace; font-size: 12px; fill: #3b82f6; }
+    
+    .web-draw { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: sweep 3s forwards; }
   </style>
 
   <rect width="100%" height="100%" fill="url(#bg-grad)" rx="12" stroke="#ef4444" stroke-width="2"/>
-  <rect width="100%" height="100%" fill="url(#web)" rx="12"/>
+  <rect width="100%" height="100%" fill="url(#spider-web)" rx="12"/>
   
-  <!-- Central Core (Iron Spider Hub) -->
-  <g transform="translate(500, 240)">
-    <circle cx="0" cy="0" r="60" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="3" filter="url(#glow-red)"/>
-    <circle cx="0" cy="0" r="48" fill="none" stroke="#eab308" stroke-width="3" stroke-dasharray="15 10" class="spin-slow" filter="url(#glow-gold)"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="30 20 10 10" class="spin-fast" filter="url(#glow-cyan)"/>
-    
-    <!-- Spidey Emblem -->
-    <path d="M -10 -5 L 10 -5 L 15 5 L -15 5 Z" fill="#ef4444"/>
-    <path d="M -5 5 L 5 5 L 10 20 L -10 20 Z" fill="#ef4444"/>
-    <path d="M -10 -5 L -25 -25 M 10 -5 L 25 -25" stroke="#ef4444" stroke-width="3" fill="none"/>
-    <path d="M -15 0 L -35 -10 M 15 0 L 35 -10" stroke="#ef4444" stroke-width="3" fill="none"/>
-    <path d="M -15 5 L -35 15 M 15 5 L 35 15" stroke="#ef4444" stroke-width="3" fill="none"/>
-    <path d="M -10 15 L -20 35 M 10 15 L 20 35" stroke="#ef4444" stroke-width="3" fill="none"/>
+  <text x="30" y="40" font-family="'Fira Code', monospace" font-size="22" fill="#ef4444" font-weight="900" letter-spacing="2" filter="url(#glow-red)">PROJECT.NODES // SPIDER_NET</text>
+
+  <!-- Web Connections -->
+  <g stroke="#ffffff" stroke-width="2" class="web-draw" fill="none" stroke-dasharray="8 4" opacity="0.5" filter="url(#glow-white)">
+    <use href="#web1"/> <use href="#web2"/> <use href="#web3"/> <use href="#web4"/> <use href="#web5"/>
   </g>
 
-  <!-- Mechanical Arms -->
-  <g stroke="#eab308" stroke-width="4" class="arm-draw" fill="none" opacity="0.8">
-    <use href="#arm1" filter="url(#glow-gold)"/> 
-    <use href="#arm2" filter="url(#glow-gold)"/> 
-    <use href="#arm3" filter="url(#glow-gold)"/> 
-    <use href="#arm4" filter="url(#glow-gold)"/> 
-  </g>
-  <g stroke="#00f2fe" stroke-width="2" class="arm-draw" fill="none" stroke-dasharray="10 5" opacity="0.6">
-    <use href="#arm1"/> <use href="#arm2"/> <use href="#arm3"/> <use href="#arm4"/>
-  </g>
-  <!-- Center Bottom Web Line -->
-  <use href="#arm5" stroke="#ef4444" stroke-width="3" class="arm-draw" opacity="0.8" filter="url(#glow-red)"/>
-
-  <!-- Mechanical Joints -->
-  <circle cx="400" cy="100" r="6" fill="#00f2fe" filter="url(#glow-cyan)"/>
-  <circle cx="400" cy="380" r="6" fill="#00f2fe" filter="url(#glow-cyan)"/>
-  <circle cx="600" cy="100" r="6" fill="#00f2fe" filter="url(#glow-cyan)"/>
-  <circle cx="600" cy="380" r="6" fill="#00f2fe" filter="url(#glow-cyan)"/>
-
-  <!-- Energy Pulses -->
+  <!-- Moving Web Packets -->
   <g>
-    <circle r="5" fill="#ef4444" filter="url(#glow-red)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#arm1"/></animateMotion></circle>
-    <circle r="5" fill="#eab308" filter="url(#glow-gold)"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#arm2"/></animateMotion></circle>
-    <circle r="5" fill="#00f2fe" filter="url(#glow-cyan)"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#arm3"/></animateMotion></circle>
-    <circle r="5" fill="#ef4444" filter="url(#glow-red)"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#arm4"/></animateMotion></circle>
-    <circle r="5" fill="#eab308" filter="url(#glow-gold)"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#arm5"/></animateMotion></circle>
+    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#web1"/></animateMotion></circle>
+    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#web2"/></animateMotion></circle>
+    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#web3"/></animateMotion></circle>
+    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#web4"/></animateMotion></circle>
+    <circle r="6" fill="#ffffff" filter="url(#glow-white)"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#web5"/></animateMotion></circle>
   </g>
 
-  <!-- Project 1: saie-ecosystem (Left Top) -->
-  <g transform="translate(220, 100)">
-    <circle cx="0" cy="0" r="30" fill="#020813" stroke="#ef4444" stroke-width="3" filter="url(#glow-red)"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#eab308" stroke-width="2" stroke-dasharray="10 20" class="spin-slow"/>
-    <text x="-50" y="-15" class="node-title" fill="#ef4444" text-anchor="end">saie-ecosystem</text>
-    <text x="-50" y="5" class="node-desc" text-anchor="end">Self-Healing AI Simulator</text>
-    <text x="-50" y="25" class="node-health" fill="#eab308" text-anchor="end">Health: 100% [NOMINAL]</text>
+  <!-- Central Core (Real Spider Emblem) -->
+  <g transform="translate(500, 300)" class="pulse-core">
+    <!-- Glowing Aura -->
+    <circle cx="0" cy="0" r="70" fill="rgba(239, 68, 68, 0.1)" stroke="#ef4444" stroke-width="2" filter="url(#glow-red)"/>
+    <circle cx="0" cy="0" r="55" fill="#0f172a" stroke="#3b82f6" stroke-width="3" filter="url(#glow-blue)"/>
+    
+    <!-- Classic Spider Logo -->
+    <g fill="#ef4444">
+      <!-- Abdomen and Head -->
+      <path d="M -15 -10 C -15 -30, 15 -30, 15 -10 C 15 10, 10 30, 0 35 C -10 30, -15 10, -15 -10 Z" />
+      <circle cx="0" cy="-20" r="8" />
+      <!-- Legs Top Left -->
+      <path d="M -8 -15 L -25 -35 L -45 -30 L -40 -25 L -20 -28 L -5 -10 Z" />
+      <path d="M -10 -5 L -35 -15 L -55 0 L -50 5 L -30 -10 L -5 0 Z" />
+      <!-- Legs Bottom Left -->
+      <path d="M -10 10 L -30 25 L -40 50 L -35 55 L -25 35 L -5 15 Z" />
+      <path d="M -5 20 L -20 45 L -20 70 L -15 70 L -15 50 L 0 25 Z" />
+      <!-- Legs Top Right -->
+      <path d="M 8 -15 L 25 -35 L 45 -30 L 40 -25 L 20 -28 L 5 -10 Z" />
+      <path d="M 10 -5 L 35 -15 L 55 0 L 50 5 L 30 -10 L 5 0 Z" />
+      <!-- Legs Bottom Right -->
+      <path d="M 10 10 L 30 25 L 40 50 L 35 55 L 25 35 L 5 15 Z" />
+      <path d="M 5 20 L 20 45 L 20 70 L 15 70 L 15 50 L 0 25 Z" />
+    </g>
   </g>
 
-  <!-- Project 2: ARAA (Left Bottom) -->
-  <g transform="translate(220, 380)">
-    <circle cx="0" cy="0" r="30" fill="#020813" stroke="#00f2fe" stroke-width="3" filter="url(#glow-cyan)"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="30 20" class="spin-fast"/>
-    <text x="-50" y="-15" class="node-title" fill="#00f2fe" text-anchor="end">ARAA</text>
-    <text x="-50" y="5" class="node-desc" text-anchor="end">Adversarial Reality Alignment</text>
-    <text x="-50" y="25" class="node-health" fill="#ef4444" text-anchor="end">Health: 98% [AUDITING]</text>
+  <!-- Helper for consistent nodes -->
+  <defs>
+    <g id="project-node">
+      <circle cx="0" cy="0" r="35" fill="#0f172a" stroke="#3b82f6" stroke-width="3" filter="url(#glow-blue)"/>
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="15 15" class="spin-slow" filter="url(#glow-red)"/>
+    </g>
+  </defs>
+
+  <!-- Project 1: saie-ecosystem (Top Left) -->
+  <g transform="translate(250, 150)">
+    <use href="#project-node"/>
+    <!-- TEXT IS BELOW THE CIRCLE TO PREVENT CLIPPING -->
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">saie-ecosystem</text>
+    <text x="0" y="85" class="node-desc" text-anchor="middle">Self-Healing AI Simulator</text>
+    <text x="0" y="105" class="node-health" text-anchor="middle">Health: 100% [NOMINAL]</text>
   </g>
 
-  <!-- Project 3: Gods-eye-x (Right Top) -->
-  <g transform="translate(780, 100)">
-    <circle cx="0" cy="0" r="30" fill="#020813" stroke="#eab308" stroke-width="3" filter="url(#glow-gold)"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="10 5" class="spin-slow"/>
-    <text x="50" y="-15" class="node-title" fill="#eab308" text-anchor="start">Gods-eye-x</text>
-    <text x="50" y="5" class="node-desc" text-anchor="start">Intelligence Dashboard</text>
-    <text x="50" y="25" class="node-health" fill="#00f2fe" text-anchor="start">Health: 100% [STREAMING]</text>
+  <!-- Project 2: ARAA (Bottom Left) -->
+  <g transform="translate(250, 410)">
+    <use href="#project-node"/>
+    <!-- Text below -->
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">ARAA</text>
+    <text x="0" y="85" class="node-desc" text-anchor="middle">Adversarial Reality Alignment</text>
+    <text x="0" y="105" class="node-health" text-anchor="middle">Health: 98% [AUDITING]</text>
   </g>
 
-  <!-- Project 4: sudarshana (Right Bottom) -->
-  <g transform="translate(780, 380)">
-    <circle cx="0" cy="0" r="30" fill="#020813" stroke="#ef4444" stroke-width="3" filter="url(#glow-red)"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#00f2fe" stroke-width="2" stroke-dasharray="50 10" class="spin-fast"/>
-    <text x="50" y="-15" class="node-title" fill="#ef4444" text-anchor="start">sudarshana</text>
-    <text x="50" y="5" class="node-desc" text-anchor="start">Intrusion Detection System</text>
-    <text x="50" y="25" class="node-health" fill="#eab308" text-anchor="start">Health: 99% [ACTIVE_LOG]</text>
+  <!-- Project 3: Gods-eye-x (Top Right) -->
+  <g transform="translate(750, 150)">
+    <use href="#project-node"/>
+    <!-- Text below -->
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">Gods-eye-x</text>
+    <text x="0" y="85" class="node-desc" text-anchor="middle">Intelligence Dashboard</text>
+    <text x="0" y="105" class="node-health" text-anchor="middle">Health: 100% [STREAMING]</text>
   </g>
 
-  <!-- Project 5: DORA-Dashboard (Bottom Center) -->
-  <g transform="translate(500, 390)">
-    <circle cx="0" cy="0" r="30" fill="#020813" stroke="#00f2fe" stroke-width="3" filter="url(#glow-cyan)"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#eab308" stroke-width="2" stroke-dasharray="5 5" class="spin-slow"/>
-    <text x="50" y="5" class="node-title" fill="#00f2fe" text-anchor="start">DORA-Dashboard</text>
-    <text x="-50" y="5" class="node-desc" text-anchor="end">DevOps Metrics</text>
-    <text x="0" y="60" class="node-health" fill="#eab308" text-anchor="middle">Health: 100% [CALCULATING]</text>
+  <!-- Project 4: sudarshana (Bottom Right) -->
+  <g transform="translate(750, 410)">
+    <use href="#project-node"/>
+    <!-- Text below -->
+    <text x="0" y="65" class="node-title" text-anchor="middle" filter="url(#glow-red)">sudarshana</text>
+    <text x="0" y="85" class="node-desc" text-anchor="middle">Intrusion Detection System</text>
+    <text x="0" y="105" class="node-health" text-anchor="middle">Health: 99% [ACTIVE_LOG]</text>
   </g>
-  
-  <text x="30" y="40" font-family="'Fira Code', monospace" font-size="20" fill="#ef4444" font-weight="900" letter-spacing="2" filter="url(#glow-red)">PROJECT.NODES // IRON_SPIDER</text>
+
+  <!-- Project 5: DORA-Dashboard (Top Center) -->
+  <g transform="translate(500, 100)">
+    <use href="#project-node"/>
+    <!-- Text to the right (plenty of room) -->
+    <text x="60" y="0" class="node-title" text-anchor="start" filter="url(#glow-red)">DORA-Dashboard</text>
+    <text x="60" y="20" class="node-desc" text-anchor="start">DevOps Metrics Engine</text>
+    <text x="60" y="40" class="node-health" text-anchor="start">Health: 100% [CALCULATING]</text>
+  </g>
+
 </svg>

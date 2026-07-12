@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRudra-Narayan-Pandey&count_bg=%2339ff14&title_bg=%2310141b&icon=&icon_color=%23E7E7E7&title=PACKET_IDS_VISITS&edge_flat=true" alt="Profile Views" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Rudra-Narayan-Pandey.Rudra-Narayan-Pandey-Hacker&color=green" alt="Profile Views" />
 </p>
 
 ```ini

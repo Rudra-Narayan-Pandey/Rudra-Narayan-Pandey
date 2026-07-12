@@ -8,7 +8,7 @@
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
-    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="2" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
@@ -27,25 +27,25 @@
 
   <style>
     @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-    .cursor { animation: blink 1s infinite; fill: #00f2fe; filter: url(#glow-cyan); }
+    .cursor { animation: blink 1s infinite; fill: #ef4444; filter: url(#glow-red); }
     .text-base { font-family: 'Fira Code', Consolas, monospace; font-size: 14px; font-weight: 600; }
   </style>
 
-  <!-- Deep Blue Stark Background -->
-  <rect width="100%" height="100%" fill="rgba(10, 25, 47, 0.8)" rx="8" stroke="#00f2fe" stroke-width="1.5"/>
+  <!-- Deep Blue Background -->
+  <rect width="100%" height="100%" fill="rgba(10, 25, 47, 0.5)" rx="8" stroke="#3b82f6" stroke-width="1.5"/>
   
   <g transform="translate(20, 20)" class="text-base">
-    <text y="15" fill="#e2e8f0" clip-path="url(#type1)">⚡ PROTOCOL        : <tspan fill="#eab308" filter="url(#glow-gold)">PROJECT_IRON_SPIDER</tspan></text>
-    <text y="35" fill="#e2e8f0" clip-path="url(#type2)">⚡ OPERATIVE       : <tspan fill="#00f2fe">RUDRA NARAYAN PANDEY</tspan></text>
-    <text y="55" fill="#e2e8f0" clip-path="url(#type3)">⚡ CLEARANCE       : <tspan fill="#ef4444" filter="url(#glow-red)">STARK_INDUSTRIES_LEVEL_10</tspan></text>
-    <text y="75" fill="#e2e8f0" clip-path="url(#type4)">⚡ CORE FOCUS      : CYBER_SECURITY | VAPT | DEVSECOPS</text>
-    <text y="95" fill="#e2e8f0" clip-path="url(#type5)">⚡ SYSTEM NODE     : VIT_VELLORE // B.TECH CSE</text>
-    <text y="115" fill="#e2e8f0" clip-path="url(#type6)">⚡ A.I. STATUS     : <tspan fill="#00f2fe" filter="url(#glow-cyan)">J.A.R.V.I.S. ONLINE</tspan></text>
+    <text y="15" fill="#e2e8f0" clip-path="url(#type1)">🕷️ PROTOCOL        : <tspan fill="#ef4444" filter="url(#glow-red)">PROJECT_WEB_SLINGER</tspan></text>
+    <text y="35" fill="#e2e8f0" clip-path="url(#type2)">🕷️ OPERATIVE       : <tspan fill="#3b82f6">RUDRA NARAYAN PANDEY</tspan></text>
+    <text y="55" fill="#e2e8f0" clip-path="url(#type3)">🕷️ CLEARANCE       : <tspan fill="#ef4444" filter="url(#glow-red)">AVENGER_LEVEL_ACCESS</tspan></text>
+    <text y="75" fill="#e2e8f0" clip-path="url(#type4)">🕷️ CORE FOCUS      : CYBER_SECURITY | VAPT | DEVSECOPS</text>
+    <text y="95" fill="#e2e8f0" clip-path="url(#type5)">🕷️ SYSTEM NODE     : VIT_VELLORE // B.TECH CSE</text>
+    <text y="115" fill="#e2e8f0" clip-path="url(#type6)">🕷️ A.I. STATUS     : <tspan fill="#3b82f6" filter="url(#glow-blue)">KAREN ONLINE</tspan></text>
     
     <!-- Security Checks -->
-    <text y="165" fill="#eab308" font-weight="bold" clip-path="url(#type7)">[J.A.R.V.I.S.] WELCOME BACK, SIR. SUIT SYSTEMS NOMINAL.</text>
-    <text y="185" fill="#00f2fe" font-weight="bold" clip-path="url(#type8)">[J.A.R.V.I.S.] ESTABLISHING SECURE STARK_NET UPLINK...</text>
-    <text y="205" fill="#ef4444" font-weight="bold" filter="url(#glow-red)" clip-path="url(#type9)">[J.A.R.V.I.S.] WARNING: THREAT DETECTED. ACTIVATING INSTANT KILL MODE.</text>
+    <text y="165" fill="#3b82f6" font-weight="bold" clip-path="url(#type7)">[SPIDER-SENSE] WEB-SHOOTER FIRMWARE UPDATED.</text>
+    <text y="185" fill="#ef4444" font-weight="bold" clip-path="url(#type8)">[SPIDER-SENSE] THREAT LEVEL: MAXIMUM CARNAGE</text>
+    <text y="205" fill="#ef4444" font-weight="bold" filter="url(#glow-red)" clip-path="url(#type9)">[SPIDER-SENSE] WARNING: SYMBIOTE INTRUSION DETECTED.</text>
 
     <!-- Moving Cursor -->
     <rect x="0" y="215" width="10" height="15" class="cursor">
@@ -54,7 +54,7 @@
     </rect>
   </g>
   
-  <line x1="0" y1="0" x2="550" y2="0" stroke="rgba(0, 242, 254, 0.3)" stroke-width="2">
+  <line x1="0" y1="0" x2="550" y2="0" stroke="rgba(239, 68, 68, 0.3)" stroke-width="2">
      <animateTransform attributeName="transform" type="translate" values="0,0; 0,260; 0,0" dur="3s" repeatCount="indefinite" />
   </line>
 </svg>

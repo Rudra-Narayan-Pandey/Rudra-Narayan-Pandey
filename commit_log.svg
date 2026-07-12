@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="250">
   <defs>
-    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
+    <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="blur" /><feComposite in="SourceGraphic" in2="blur" operator="over" /></filter>
     <linearGradient id="fade-mask" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="transparent" />
       <stop offset="15%" stop-color="white" />
@@ -19,29 +20,30 @@
     }
     .scroller { animation: scroll 15s linear infinite; }
     .commit-text { font-family: 'Fira Code', monospace; font-size: 13px; font-weight: 600; }
-    .hash { fill: #eab308; }
-    .branch { fill: #00f2fe; }
+    .hash { fill: #3b82f6; }
+    .branch { fill: #ef4444; }
     .msg { fill: #e2e8f0; }
   </style>
 
-  <rect width="100%" height="100%" fill="rgba(10, 25, 47, 0.8)" rx="10" stroke="#00f2fe" stroke-width="1.5"/>
+  <!-- Deep Blue Background with Red Border -->
+  <rect width="100%" height="100%" fill="rgba(10, 25, 47, 0.8)" rx="10" stroke="#ef4444" stroke-width="2"/>
   
-  <text x="20" y="30" font-family="'Fira Code', monospace" font-size="14" fill="#00f2fe" font-weight="900" letter-spacing="1" filter="url(#glow-cyan)">root@jarvis:~/stark_net$ tail -f /var/log/iron_spider.log</text>
-  <line x1="20" y1="40" x2="780" y2="40" stroke="#00f2fe" stroke-width="2" opacity="0.5"/>
+  <text x="20" y="30" font-family="'Fira Code', monospace" font-size="14" fill="#ef4444" font-weight="900" letter-spacing="1" filter="url(#glow-red)">peter@spider-os:~/web_net$ tail -f /var/log/spider_sense.log</text>
+  <line x1="20" y1="40" x2="780" y2="40" stroke="#3b82f6" stroke-width="2" opacity="0.5"/>
 
   <!-- Scrolling Area -->
   <g mask="url(#fade)">
     <g class="scroller" transform="translate(20, 0)">
-      <text y="50" class="commit-text"><tspan class="hash">70401b6</tspan> <tspan class="branch">(HEAD -> stark_net)</tspan> <tspan class="msg">⚡ [ROOT.ACCESS] SYSTEM ONLINE. IRON SPIDER PROTOCOL ACTIVATED.</tspan></text>
-      <text y="75" class="commit-text"><tspan class="hash">7e1a7da</tspan> <tspan class="msg">⚡ [SYNC] CALIBRATING NANOTECH HUD SCANNERS</tspan></text>
-      <text y="100" class="commit-text"><tspan class="hash">b21c953</tspan> <tspan class="msg">⚡ [SYS.DEFENSE] ARMING REPULSOR COUNTER-MEASURE PROTOCOLS</tspan></text>
-      <text y="125" class="commit-text"><tspan class="hash">bc80180</tspan> <tspan class="msg">⚡ [UI.RENDER] INITIALIZING HOLOGRAPHIC JARVIS INTERFACE</tspan></text>
-      <text y="150" class="commit-text"><tspan class="hash">d103085</tspan> <tspan class="msg">⚡ [AUTH.FORGE] VERIFYING STARK CREDENTIALS - ACCESS GRANTED</tspan></text>
-      <text y="175" class="commit-text"><tspan class="hash">2da98c3</tspan> <tspan class="msg">⚡ [INJECT] UPLOADING WEB_SHOOTER_FIRMWARE.BIN TO MAINFRAME</tspan></text>
-      <text y="200" class="commit-text"><tspan class="hash">96e3194</tspan> <tspan class="msg">⚡ [OVERRIDE] BYPASSING SHIELD FIREWALLS via QUANTUM TUNNEL</tspan></text>
-      <text y="225" class="commit-text"><tspan class="hash">b785e1d</tspan> <tspan class="msg">⚡ [NETWORK.UPLINK] ESTABLISHING EDITH RELAY CONNECTION</tspan></text>
-      <text y="250" class="commit-text"><tspan class="hash">c473cf5</tspan> <tspan class="msg">⚡ [MODULE.LOAD] DECRYPTING NANITE SECTOR 7G</tspan></text>
-      <text y="275" class="commit-text"><tspan class="hash">31fc8ed</tspan> <tspan class="msg">⚡ [SYS.INIT] BOOT SEQUENCE INITIATED... JARVIS ONLINE</tspan></text>
+      <text y="50" class="commit-text"><tspan class="hash">70401b6</tspan> <tspan class="branch">(HEAD -> spider_net)</tspan> <tspan class="msg">🕷️ [ROOT.ACCESS] SYSTEM ONLINE. SPIDER-SENSE PROTOCOL ACTIVATED.</tspan></text>
+      <text y="75" class="commit-text"><tspan class="hash">7e1a7da</tspan> <tspan class="msg">🕷️ [SYNC] CALIBRATING WEB-SHOOTER FLUID DYNAMICS</tspan></text>
+      <text y="100" class="commit-text"><tspan class="hash">b21c953</tspan> <tspan class="msg">🕷️ [SYS.DEFENSE] ARMING SYMBIOTE COUNTER-MEASURE PROTOCOLS</tspan></text>
+      <text y="125" class="commit-text"><tspan class="hash">bc80180</tspan> <tspan class="msg">🕷️ [UI.RENDER] INITIALIZING HOLOGRAPHIC KAREN INTERFACE</tspan></text>
+      <text y="150" class="commit-text"><tspan class="hash">d103085</tspan> <tspan class="msg">🕷️ [AUTH.FORGE] VERIFYING PARKER CREDENTIALS - ACCESS GRANTED</tspan></text>
+      <text y="175" class="commit-text"><tspan class="hash">2da98c3</tspan> <tspan class="msg">🕷️ [INJECT] UPLOADING WEB_TRAP_FIRMWARE.BIN TO MAINFRAME</tspan></text>
+      <text y="200" class="commit-text"><tspan class="hash">96e3194</tspan> <tspan class="msg">🕷️ [OVERRIDE] BYPASSING OSBORN FIREWALLS via QUANTUM TUNNEL</tspan></text>
+      <text y="225" class="commit-text"><tspan class="hash">b785e1d</tspan> <tspan class="msg">🕷️ [NETWORK.UPLINK] ESTABLISHING AVENGER RELAY CONNECTION</tspan></text>
+      <text y="250" class="commit-text"><tspan class="hash">c473cf5</tspan> <tspan class="msg">🕷️ [MODULE.LOAD] DECRYPTING MULTIVERSE SECTOR 7G</tspan></text>
+      <text y="275" class="commit-text"><tspan class="hash">31fc8ed</tspan> <tspan class="msg">🕷️ [SYS.INIT] BOOT SEQUENCE INITIATED... KAREN ONLINE</tspan></text>
     </g>
   </g>
 </svg>

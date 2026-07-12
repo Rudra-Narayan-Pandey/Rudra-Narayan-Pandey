@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="280">
+  <defs>
+    <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="heavy-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <radialGradient id="gamma-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#062210" />
+      <stop offset="70%" stop-color="#020d06" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
+    
+    <clipPath id="type1"><rect x="0" y="0" height="20" width="0"><animate attributeName="width" values="0; 800" dur="1s" fill="freeze" /></rect></clipPath>
+    <clipPath id="type2"><rect x="0" y="30" height="40" width="0"><animate attributeName="width" values="0; 0; 800" keyTimes="0; 0.2; 1" dur="2.5s" fill="freeze" /></rect></clipPath>
+    <clipPath id="type3"><rect x="0" y="80" height="40" width="0"><animate attributeName="width" values="0; 0; 800" keyTimes="0; 0.4; 1" dur="3.5s" fill="freeze" /></rect></clipPath>
+    <clipPath id="type4"><rect x="0" y="130" height="40" width="0"><animate attributeName="width" values="0; 0; 800" keyTimes="0; 0.6; 1" dur="4.5s" fill="freeze" /></rect></clipPath>
+    <clipPath id="type5"><rect x="0" y="180" height="40" width="0"><animate attributeName="width" values="0; 0; 800" keyTimes="0; 0.8; 1" dur="5.5s" fill="freeze" /></rect></clipPath>
+  </defs>
+
+  <style>
+    @keyframes smash {
+      0%, 100% { transform: translate(0, 0); }
+      1%, 3%, 5%, 7%, 9% { transform: translate(-2px, 2px); }
+      2%, 4%, 6%, 8% { transform: translate(2px, -2px); }
+      10%, 99% { transform: translate(0, 0); }
+    }
+    @keyframes pulse-rad {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(1.1); }
+    }
+    .text-body { font-family: 'Fira Code', monospace; font-size: 13px; fill: #22c55e; }
+    .text-highlight { fill: #39ff14; font-weight: bold; }
+    .hulk-smash { animation: smash 4s infinite; transform-origin: center; }
+    .rad-symbol { animation: pulse-rad 3s ease-in-out infinite; transform-origin: 700px 140px; }
+  </style>
+
+  <!-- Gamma Background -->
+  <rect width="100%" height="100%" fill="url(#gamma-bg)" rx="10" stroke="#39ff14" stroke-width="3" stroke-dasharray="10 5" class="hulk-smash"/>
+  
+  <!-- Giant Background Radiation Symbol -->
+  <g class="rad-symbol" fill="rgba(57, 255, 20, 0.1)">
+    <circle cx="700" cy="140" r="20" />
+    <path d="M 700 115 A 25 25 0 0 1 721 127 L 741 115 A 45 45 0 0 0 659 115 L 679 127 A 25 25 0 0 1 700 115" />
+    <path d="M 677 150 A 25 25 0 0 1 677 130 L 655 118 A 45 45 0 0 0 655 162 L 677 150" />
+    <path d="M 723 150 A 25 25 0 0 0 723 130 L 745 118 A 45 45 0 0 1 745 162 L 723 150" />
+  </g>
+
+  <!-- Hacker Hulk Text -->
+  <g transform="translate(30, 40)" class="text-body hulk-smash">
+    <!-- Header -->
+    <text y="0" font-size="18" fill="#39ff14" font-weight="900" filter="url(#heavy-glow)" clip-path="url(#type1)">[GAMMA LEVEL THREAT MITIGATOR]</text>
+    <line x1="0" y1="10" x2="330" y2="10" stroke="#39ff14" stroke-width="2" clip-path="url(#type1)"/>
+    
+    <!-- Paragraph 1 -->
+    <g clip-path="url(#type2)">
+      <text y="40">I am an <tspan class="text-highlight">unstoppable</tspan> Cybersecurity Engineer and Infrastructure Developer specializing in</text>
+      <text y="58">VAPT, Cloud Security Architecture, and SIEM/SOC automation.</text>
+    </g>
+
+    <!-- Paragraph 2 -->
+    <g clip-path="url(#type3)">
+      <text y="90">Based at VIT Vellore, my operational focus is <tspan class="text-highlight">brute-forcing defenses</tspan>, identifying weaknesses,</text>
+      <text y="108">and aggressively mitigating threats across complex software ecosystems.</text>
+    </g>
+
+    <!-- Paragraph 3 -->
+    <g clip-path="url(#type4)">
+      <text y="140">I build <tspan class="text-highlight">impenetrable</tspan> defensive testbeds, deploy heavy-duty security configuration benchmarks,</text>
+      <text y="158">and develop tools to harden multi-agent cloud systems against adversarial bypasses.</text>
+    </g>
+
+    <!-- SMASH BUGS line -->
+    <g clip-path="url(#type5)">
+      <text y="205" font-size="24" font-weight="900" fill="#39ff14" filter="url(#heavy-glow)">> I DON'T JUST PATCH SYSTEMS... I SMASH BUGS.</text>
+    </g>
+  </g>
+  
+  <!-- Subtle scanning scanline -->
+  <line x1="0" y1="0" x2="800" y2="0" stroke="rgba(57, 255, 20, 0.2)" stroke-width="3">
+     <animateTransform attributeName="transform" type="translate" values="0,0; 0,280; 0,0" dur="2s" repeatCount="indefinite" />
+  </line>
+</svg>

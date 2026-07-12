@@ -51,16 +51,7 @@
 <details open>
   <summary><b><kbd>./execute_gamma_protocol.sh --smash-vulnerabilities</kbd></b></summary>
   <br>
-  ```diff
-  + [GAMMA LEVEL THREAT MITIGATOR]
-  + 
-  + I am an unstoppable Cybersecurity Engineer and Infrastructure Developer specializing in VAPT, Cloud Security Architecture, and SIEM/SOC automation. 
-  + Based at VIT Vellore, my operational focus is brute-forcing defenses, identifying weaknesses, and aggressively mitigating threats across complex software ecosystems.
-  + 
-  + I build impenetrable defensive testbeds, deploy heavy-duty security configuration benchmarks, and develop tools to harden multi-agent cloud systems against adversarial bypasses.
-  + 
-  + I don't just patch systems... I SMASH BUGS.
-  ```
+  <img src="./hulk_directive.svg?v=1" alt="Hulk Mission Directive" width="100%" />
 </details>
 
 <details open>

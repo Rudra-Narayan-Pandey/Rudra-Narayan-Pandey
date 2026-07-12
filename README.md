@@ -58,7 +58,7 @@
   <summary><b><kbd>./list_active_nodes.sh --filter=projects</kbd></b></summary>
   <br>
   <a href="https://github.com/Rudra-Narayan-Pandey?tab=repositories">
-    <img src="./projects_hud.svg?v=2" alt="Projects HUD Dashboard" width="100%" />
+    <img src="./projects_hud.svg?v=3" alt="Projects HUD Dashboard" width="100%" />
   </a>
 </details>
 

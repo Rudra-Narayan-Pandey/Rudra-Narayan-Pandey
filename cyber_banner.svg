@@ -94,32 +94,62 @@
   <line class="matrix-col" x1="685" y1="0" x2="685" y2="300" opacity="0.2"/>
   <line class="matrix-col" x1="975" y1="20" x2="975" y2="300" opacity="0.1" style="animation-duration: 3s;"/>
 
-  <!-- ==================== LEFT PANEL: CYBER RADAR ==================== -->
+  <!-- ==================== LEFT PANEL: HOLOGRAPHIC FACE SCAN ==================== -->
   <g transform="translate(0, 0)">
-    <!-- Radar Grids -->
-    <circle cx="120" cy="150" r="100" fill="none" stroke="#102535" stroke-width="1.5"/>
-    <circle cx="120" cy="150" r="80" fill="none" stroke="#16384f" stroke-width="1"/>
-    <circle cx="120" cy="150" r="60" fill="none" stroke="#1a4663" stroke-dasharray="3 5" stroke-width="1"/>
-    <circle cx="120" cy="150" r="40" fill="none" stroke="#16384f" stroke-width="1"/>
-    <circle cx="120" cy="150" r="20" fill="none" stroke="#39ff14" stroke-width="0.5" opacity="0.5"/>
-    <circle cx="120" cy="150" r="5" fill="#39ff14" filter="url(#glow-green)"/>
+    <!-- Scanning HUD Enclosure/Grid -->
+    <circle cx="120" cy="140" r="85" fill="none" stroke="#102535" stroke-width="1"/>
+    <circle cx="120" cy="140" r="95" fill="none" stroke="#16384f" stroke-width="1.5" stroke-dasharray="5 10"/>
+    <circle cx="120" cy="140" r="105" fill="none" stroke="#1a4663" stroke-width="0.8" opacity="0.5"/>
+
+    <!-- Target Frame Corners -->
+    <path d="M 45 70 V 60 H 55 M 185 60 H 195 V 70 M 195 210 V 220 H 185 M 55 220 H 45 V 210" fill="none" stroke="#00f2fe" stroke-width="1.5"/>
+
+    <!-- Main Mask/Skull Base (Transparent blue-glow fill) -->
+    <path d="M 120 70 C 85 70, 70 90, 70 120 C 70 145, 80 155, 85 165 L 95 195 C 100 205, 110 210, 120 210 C 130 210, 140 205, 145 195 L 155 165 C 160 155, 170 145, 170 120 C 170 90, 155 70, 120 70 Z" fill="rgba(5, 15, 25, 0.7)" stroke="#00f2fe" stroke-width="1" filter="url(#glow-cyan)"/>
     
-    <!-- Crosshair Coordinates -->
-    <line x1="120" y1="35" x2="120" y2="265" stroke="#16384f" stroke-width="1"/>
-    <line x1="5" y1="150" x2="235" y2="150" stroke="#16384f" stroke-width="1"/>
-    <path d="M 120 50 L 125 60 H 115 Z M 120 250 L 125 240 H 115 Z" fill="#16384f"/>
+    <!-- Outer Contour highlights -->
+    <path d="M 120 70 C 85 70, 70 90, 70 120 C 70 145, 80 155, 85 165 L 95 195 C 100 205, 110 210, 120 210 C 130 210, 140 205, 145 195 L 155 165 C 160 155, 170 145, 170 120 C 170 90, 155 70, 120 70 Z" fill="none" stroke="#39ff14" stroke-width="2" filter="url(#glow-green)" opacity="0.8"/>
 
-    <!-- Sweep Line -->
-    <line class="radar-sweep" x1="120" y1="150" x2="120" y2="50" stroke="#39ff14" stroke-width="2" filter="url(#glow-green)"/>
-    <polygon points="120,150 120,50 145,55 168,75 120,150" fill="rgba(57, 255, 20, 0.08)" class="radar-sweep"/>
+    <!-- Visor Eye Sockets -->
+    <polygon points="82,115 110,115 106,132 84,132" fill="none" stroke="#00f2fe" stroke-width="1.5" filter="url(#glow-cyan)"/>
+    <polygon points="130,115 158,115 156,132 134,132" fill="none" stroke="#00f2fe" stroke-width="1.5" filter="url(#glow-cyan)"/>
 
-    <!-- HUD Text overlays -->
-    <text x="30" y="270" font-family="'Fira Code', monospace" font-size="9" fill="#00f2fe" opacity="0.6">SYS.SCAN: INCR</text>
-    <text x="160" y="270" font-family="'Fira Code', monospace" font-size="9" fill="#9b5de5" opacity="0.6">DEG: 144.2°</text>
+    <!-- Cyber Target Eyes -->
+    <circle cx="95" cy="123" r="3.5" fill="#39ff14" filter="url(#glow-green)"/>
+    <circle cx="95" cy="123" r="7" fill="none" stroke="#39ff14" stroke-width="0.8"/>
+    
+    <circle cx="145" cy="123" r="3.5" fill="#ff3333" filter="url(#glow-red)" style="animation: pulse-fast 1s infinite;"/>
+    <line x1="138" y1="123" x2="152" y2="123" stroke="#ff3333" stroke-width="0.8"/>
+    <line x1="145" y1="116" x2="145" y2="130" stroke="#ff3333" stroke-width="0.8"/>
 
-    <!-- Threat indicators -->
-    <circle cx="70" cy="110" r="4" fill="#ff3333" filter="url(#glow-red)" style="animation: pulse-fast 2s infinite;"/>
-    <circle cx="170" cy="200" r="3.5" fill="#00f2fe" filter="url(#glow-cyan)" style="animation: pulse 4s infinite;"/>
+    <!-- Nasal Cavity -->
+    <polygon points="120,138 112,152 128,152" fill="#07121c" stroke="#16384f" stroke-width="1"/>
+
+    <!-- Respirator / Mouth Grille -->
+    <path d="M 100 168 H 140 M 103 175 H 137 M 107 182 H 133 M 112 189 H 128" stroke="#39ff14" stroke-dasharray="2 2" stroke-width="2" filter="url(#glow-green)"/>
+
+    <!-- Forehead Circuit Lines -->
+    <path d="M 120 70 V 55 H 100" fill="none" stroke="#39ff14" stroke-width="1" stroke-dasharray="1 2"/>
+    <circle cx="100" cy="55" r="1.5" fill="#39ff14"/>
+    <path d="M 120 70 V 55 H 140" fill="none" stroke="#00f2fe" stroke-width="1" stroke-dasharray="1 2"/>
+    <circle cx="140" cy="55" r="1.5" fill="#00f2fe"/>
+
+    <!-- Cheek Circuit Board Traces -->
+    <path d="M 70 135 H 52 V 155" fill="none" stroke="#39ff14" stroke-width="1"/>
+    <circle cx="52" cy="155" r="2" fill="#39ff14" filter="url(#glow-green)"/>
+
+    <path d="M 170 135 H 188 V 155" fill="none" stroke="#00f2fe" stroke-width="1"/>
+    <circle cx="188" cy="155" r="2" fill="#00f2fe" filter="url(#glow-cyan)"/>
+
+    <!-- Sweeping Laser Scan Line -->
+    <line x1="45" y1="60" x2="195" y2="60" stroke="#39ff14" stroke-width="2" filter="url(#glow-green)">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,160; 0,0" dur="4.5s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Side Status Data -->
+    <text x="25" y="260" font-family="'Fira Code', monospace" font-size="8" fill="#00f2fe" opacity="0.7">OPERATIVE: RUDRA_N_PANDEY</text>
+    <text x="25" y="272" font-family="'Fira Code', monospace" font-size="8" fill="#39ff14" opacity="0.8">SCAN STATUS: 99.88% COMPLETE</text>
+    <text x="25" y="284" font-family="'Fira Code', monospace" font-size="8" fill="#ff3333" opacity="0.7">THREAT ENVELOPE: EXCLUDED</text>
   </g>
 
   <!-- ==================== MIDDLE PANEL: TACTICAL TERMINAL ==================== -->

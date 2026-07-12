@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="260" height="260">
+  <defs>
+    <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-red" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <radialGradient id="reactor-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a192f" />
+      <stop offset="50%" stop-color="#020c1b" />
+      <stop offset="100%" stop-color="#010610" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } }
+    @keyframes flicker { 0%, 100% { opacity: 1; } 90% { opacity: 0.8; } 95% { opacity: 0.2; } }
+    
+    .ring-slow { animation: spin 15s linear infinite; transform-origin: 130px 130px; }
+    .ring-fast { animation: spin-rev 6s linear infinite; transform-origin: 130px 130px; }
+    .reactor-core { animation: pulse 2s ease-in-out infinite; transform-origin: 130px 130px; }
+    .jarvis-text { font-family: 'Fira Code', monospace; font-size: 8px; fill: #00f2fe; animation: flicker 4s infinite; }
+  </style>
+
+  <!-- Deep Blue/Black Background -->
+  <rect width="100%" height="100%" fill="url(#reactor-bg)" rx="12" stroke="#00f2fe" stroke-width="1" opacity="0.5"/>
+  
+  <g class="reactor-core">
+    <!-- Outer Arc Rings (Cyan/Blue) -->
+    <circle cx="130" cy="130" r="115" fill="none" stroke="#00f2fe" stroke-width="1.5" class="ring-slow" stroke-dasharray="20 10 50 20" filter="url(#glow-cyan)" opacity="0.6"/>
+    <circle cx="130" cy="130" r="105" fill="none" stroke="#00f2fe" stroke-width="3" stroke-dasharray="8 8" opacity="0.8"/>
+    <circle cx="130" cy="130" r="95" fill="none" stroke="#00f2fe" stroke-width="1" class="ring-fast" stroke-dasharray="100 50" filter="url(#glow-cyan)"/>
+    
+    <!-- Iron Man / Stark Gold Accents -->
+    <circle cx="130" cy="130" r="85" fill="none" stroke="#eab308" stroke-width="4" stroke-dasharray="30 10" class="ring-slow" filter="url(#glow-gold)"/>
+    
+    <!-- Inner Core Structure -->
+    <circle cx="130" cy="130" r="65" fill="#061224" stroke="#00f2fe" stroke-width="2" filter="url(#glow-cyan)"/>
+    <path d="M 130 65 L 155 130 L 130 195 L 105 130 Z" fill="none" stroke="#00f2fe" stroke-width="1.5" class="ring-fast"/>
+    
+    <!-- Spidey Element: The Red Spider Emblem -->
+    <g filter="url(#glow-red)" transform="translate(10, 10)">
+      <!-- Central Body -->
+      <circle cx="120" cy="115" r="8" fill="#ef4444" />
+      <circle cx="120" cy="130" r="12" fill="#ef4444" />
+      <!-- Legs Left -->
+      <path d="M 112 110 L 95 95 L 90 105" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <path d="M 110 115 L 90 115 L 85 125" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <path d="M 110 130 L 95 140 L 90 155" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <path d="M 115 140 L 105 155 L 105 170" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <!-- Legs Right -->
+      <path d="M 128 110 L 145 95 L 150 105" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <path d="M 130 115 L 150 115 L 155 125" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <path d="M 130 130 L 145 140 L 150 155" stroke="#ef4444" stroke-width="2" fill="none"/>
+      <path d="M 125 140 L 135 155 L 135 170" stroke="#ef4444" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Center Light -->
+    <circle cx="130" cy="130" r="10" fill="#00f2fe" filter="url(#glow-cyan)" opacity="0.8"/>
+  </g>
+
+  <!-- Jarvis HUD Diagnostics -->
+  <text x="10" y="20" class="jarvis-text">SYS.JARVIS.v3.1</text>
+  <text x="10" y="32" class="jarvis-text">DIAG: OPTIMAL</text>
+  <text x="175" y="245" class="jarvis-text" fill="#ef4444" filter="url(#glow-red)">PROJECT: IRON_SPIDER</text>
+
+  <!-- Webbing Overlay Lines (Subtle) -->
+  <path d="M 0 0 L 70 70 M 260 0 L 190 70 M 0 260 L 70 190 M 260 260 L 190 190" stroke="rgba(0, 242, 254, 0.2)" stroke-width="1"/>
+</svg>

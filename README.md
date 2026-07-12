@@ -1,7 +1,7 @@
 ```diff
-+ [NETSHIELD] ONLINE
-+ [FIREWALL] ARMED
-+ [ENCRYPTION] AES-256
++ [STARK_NET] ONLINE
++ [J.A.R.V.I.S] ARMED
++ [ENCRYPTION] QUANTUM-256
 ```
 
 <p align="center">
@@ -36,17 +36,17 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
   <tr>
     <td width="280" align="center" valign="middle" style="border: none; background: transparent;">
-      <img src="./alien_ufo_core.svg?v=1" width="260" alt="Alien UFO Core" style="border-radius: 12px; border: 2px solid #a855f7; box-shadow: 0 0 20px rgba(168,85,247,0.4);" />
+      <img src="./stark_hud.svg?v=1" width="260" alt="Stark HUD Core" style="border-radius: 12px; border: 2px solid #00f2fe; box-shadow: 0 0 20px rgba(0,242,254,0.4);" />
     </td>
     <td valign="top" style="border: none; background: transparent; padding-left: 20px;">
-      <img src="./terminal_card.svg?v=2" alt="Terminal Card" width="100%" />
+      <img src="./terminal_card.svg?v=3" alt="Terminal Card" width="100%" />
     </td>
   </tr>
 </table>
 
 ---
 
-### ⎔ <kbd>root/classified_data/</kbd>
+### ⚡ <kbd>stark_net/classified_data/</kbd>
 
 <details open>
   <summary><b><kbd>./view_mission_directive.sh</kbd></b></summary>
@@ -61,7 +61,7 @@
   <summary><b><kbd>./list_active_nodes.sh --filter=projects</kbd></b></summary>
   <br>
   <a href="https://github.com/Rudra-Narayan-Pandey?tab=repositories">
-    <img src="./projects_hud.svg?v=1" alt="Projects HUD Dashboard" width="100%" />
+    <img src="./projects_hud.svg?v=2" alt="Projects HUD Dashboard" width="100%" />
   </a>
 </details>
 
@@ -142,7 +142,7 @@
 <details open>
   <summary><b><kbd>git log --oneline --color</kbd></b></summary>
   <br>
-  <img src="./commit_log.svg?v=1" alt="Scrolling Commit Log" width="100%" />
+  <img src="./commit_log.svg?v=2" alt="Scrolling Commit Log" width="100%" />
 </details>
 
 ---
